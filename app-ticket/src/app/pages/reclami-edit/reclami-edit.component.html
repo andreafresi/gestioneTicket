@@ -1,1 +1,84 @@
 <p>reclami-edit works!</p>
+
+<div>
+  <form action="">
+    <div class="formaDelForm">
+      <div>
+        <label for="codiceNegozio">Codice Negozio </label><br />
+        <input type="text" id="codiceNegozio" />
+      </div>
+      <div>
+        <label for="descrizioneNegozio">Descrizione Negozio </label><br />
+        <input type="text" id="descrizioneNegozio" />
+      </div>
+      <div>
+        <label for="stato">Stato </label><br />
+        <select name="stato" id="stato">
+          <option value="uno">uno</option>
+          <option value="due">due</option>
+          <option value="tre">tre</option>
+        </select>
+      </div>
+      <div>
+        <label for="gestione">Gestione </label><br />
+        <select name="gestione" id="gestione">
+          <option value="uno">uno</option>
+          <option value="due">due</option>
+          <option value="tre">tre</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="data">Data segnalazione da a </label><br />
+        <input type="date" id="data" value="null" />
+      </div>
+      <div>
+        <label for="area">Area </label><br />
+        <select name="area" id="area">
+          <option value="uno">uno</option>
+          <option value="due">due</option>
+          <option value="tre">tre</option>
+        </select>
+      </div>
+      <div>
+        <label for="causale">Causale </label><br />
+        <select name="causale" id="causale">
+          <option value="uno">uno</option>
+          <option value="due">due</option>
+          <option value="tre">tre</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <button class="btn-nascondi">
+        <span class="material-symbols-outlined">filter_list</span>
+        NASCONDI FILTRI AVANZATI
+      </button>
+    </div>
+    <div class="formaDelForm">
+      <div>
+        <label for="idReclamo">ID Reclamo </label><br />
+        <input type="text" id="idReclamo" />
+      </div>
+      <div>
+        <label for="nome">Nome cliente </label><br />
+        <input type="text" id="nome" />
+      </div>
+
+      <div>
+        <label for="cognome">Cognome clinete </label><br />
+        <input type="text" id="cognome" />
+      </div>
+      <div>
+        <label for="banner">Banner </label><br />
+        <select name="banner" id="banner">
+          <option value="uno">uno</option>
+          <option value="due">due</option>
+          <option value="tre">tre</option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <button class="btn-inserisci">AZZERA</button>
+  <button>CERCA</button>
+</div>

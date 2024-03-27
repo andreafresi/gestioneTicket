@@ -28,6 +28,28 @@ export class ReclamiService {
     return this.httpClient.get<Regione[]>('http://localhost:3000/regione')
   }
 
-  
+  getReclamoById(id: string) {
+    return this.httpClient.get<Reclamo>('http://localhost:3000/reclamo/' + id);
+  }
+  getClienteByMail(email: string) {
+    return this.httpClient.get<Cliente>('http://localhost:3000/cliente/' + email);
+  }
 
+  getNegozioById(id: string) {
+    return this.httpClient.get<Negozio>('http://localhost:3000/reclamo/' + id);
+  }
+  
+  updateReclamo(reclamo:Reclamo){
+    return this.httpClient.patch(
+      `http://localhost:3000/reclamo/${reclamo.id}`,
+      reclamo
+    );
+  }
+
+  deleteReclamo(reclamo: any) {
+    return this.httpClient.delete(
+      `http://localhost:3000/reclamo/${reclamo.id}`,
+      reclamo
+    );
+  }
 }
