@@ -1,12 +1,14 @@
 <p>reclami-list works!</p>
 
 <div>
-    <div>
+    <div class="testata">
         <h2>RECLAMI</h2>
         <button style="display: flex; align-items: center;">
-            <span class="material-symbols-outlined">add</span> INSERISCI UN RECLAMO
+            <span class="material-symbols-outlined">add</span> 
+            INSERISCI UN RECLAMO
         </button>
     </div>
+    <hr>
     <div>
         <form action="">
             <div>
@@ -55,10 +57,14 @@
                     </select>
                 </div>
             </div>
+
             <div>
-                <p style="display: flex; align-items: center;"><span class="material-symbols-outlined">filter_list</span> NASCONDI FILTRI AVANZATI</p>
+                <button id="showFiltriBox" style="display: flex; align-items: center;">
+                    <span class="material-symbols-outlined">filter_list</span> 
+                    NASCONDI FILTRI AVANZATI
+                </button>
             </div>
-            <div>
+            <div id="filtriBox">
                 <div>
                     <label for="idReclamo">ID Reclamo </label>
                     <input type="text" id="idReclamo">
@@ -81,7 +87,10 @@
                     </select>
                 </div>
             </div>
-
+            <div>
+                <button>AZZERA</button>
+                <button>CERCA</button>
+            </div>
         </form>
     </div>
 </div>
