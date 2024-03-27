@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { ReclamiEditComponent } from './pages/reclami-edit/reclami-edit.componen
     ReclamiEditComponent,
   ],
   imports: [
+    NgxDatatableModule,
     BrowserModule,
     AppRoutingModule
   ],
