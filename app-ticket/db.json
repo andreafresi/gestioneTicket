@@ -1,7 +1,122 @@
 {
     "cliente": [
         {
-
+            "email": "mario.rossi@example.com",
+            "nome": "Mario",
+            "cognome": "Rossi",
+            "cellulare": "3331234567",
+            "telefono": "0123456789",
+            "indirizzo": "Via Roma 1",
+            "provincia": "MI"
+        },
+        {
+            "email": "anna.verdi@example.com",
+            "nome": "Anna",
+            "cognome": "Verdi",
+            "cellulare": "3339876543",
+            "telefono": "0987654321",
+            "indirizzo": "Via Milano 2",
+            "provincia": "RM"
+        },
+        {
+            "email": "luigi.bianchi@example.com",
+            "nome": "Luigi",
+            "cognome": "Bianchi",
+            "cellulare": "3335554444",
+            "telefono": "0456789123",
+            "indirizzo": "Via Napoli 3",
+            "provincia": "NA"
+        }
+    ],
+    "negozio": [
+        {
+            "id": "1001",
+            "descrizione": "Negozio di abbigliamento",
+            "manager": "Giovanni Rossi"
+        },
+        {
+            "id": "1002",
+            "descrizione": "Negozio di elettronica",
+            "manager": "Maria Verdi"
+        },
+        {
+            "id": "1003",
+            "descrizione": "Negozio di alimentari",
+            "manager": "Luigi Bianchi"
+        }
+    ],
+    "reclamo": [
+        {
+            "id": 1,
+            "dataApertura": "2024-03-27",
+            "codiceNegozio": "1001",
+            "causale": "Prodotto difettoso",
+            "descrizione": "Il prodotto acquistato ha un difetto di fabbricazione.",
+            "shopOnline": false,
+            "regione": "Toscana",
+            "provincia": "FI",
+            "email": "mario.rossi@example.com"
+        },
+        {
+            "id": 2,
+            "dataApertura": "2024-03-26",
+            "codiceNegozio": "1002",
+            "causale": "Prodotto non conforme",
+            "descrizione": "Il prodotto ricevuto non corrisponde alla descrizione sul sito.",
+            "shopOnline": true,
+            "regione": "Emilia-Romagna",
+            "provincia": "BO",
+            "email": "anna.verdi@example.com"
+        },
+        {
+            "id": 3,
+            "dataApertura": "2024-03-25",
+            "codiceNegozio": "1003",
+            "causale": "Ritardo nella consegna",
+            "descrizione": "Il mio ordine è in ritardo rispetto alla data prevista di consegna.",
+            "shopOnline": true,
+            "regione": "Marche",
+            "provincia": "AN",
+            "email": "luigi.bianchi@example.com"
+        }
+    ],
+    "regione": [
+        {
+            "nomeRegione": "Toscana",
+            "provincia": [
+                "FI",
+                "AR",
+                "PT",
+                "SI",
+                "LU",
+                "LI",
+                "PO",
+                "MS"
+            ]
+        },
+        {
+            "nomeRegione": "Emilia-Romagna",
+            "provincia": [
+                "BO",
+                "FE",
+                "FC",
+                "MO",
+                "PR",
+                "PC",
+                "RA",
+                "RE",
+                "RN"
+            ]
+        },
+        {
+            "nomeRegione": "Marche",
+            "provincia": [
+                "AN",
+                "AP",
+                "FM",
+                "MC",
+                "PU"
+            ]
         }
     ]
 }

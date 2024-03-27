@@ -7,4 +7,5 @@ export interface Reclamo{
     shopOnline?: boolean;
     regione?: string;
     provincia?: string;
+    email?: string;
 }
