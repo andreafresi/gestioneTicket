@@ -28,11 +28,6 @@ export class ReclamiService {
     return this.httpClient.get<Regione[]>('http://localhost:3000/regione')
   }
 
-  getReclamoById(id: string) {
-    return this.httpClient.get<Reclamo>('http://localhost:3000/reclamo/' + id);
-  }
-  getClienteByMail(email: string) {
-    return this.httpClient.get<Cliente>('http://localhost:3000/cliente/' + email);
-  }
+  
 
 }
