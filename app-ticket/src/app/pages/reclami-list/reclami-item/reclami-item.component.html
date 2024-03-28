@@ -1,7 +1,7 @@
 <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 </p>
-<ngx-datatable [rows]="listReclami" columnMode="force" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'"
-    [scrollbarV]="true" [scrollbarH]="true">
+<ngx-datatable [rows]="listReclami" columnMode="force" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+
     <ngx-datatable-column prop="id" name="ID RECLAMO" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
@@ -37,7 +37,8 @@
 
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="soddisfazione" name="SODDISFAZIONE" [width]="100" [resizeable]="false" [sortable]="false">
+    <ngx-datatable-column prop="soddisfazione" name="SODDISFAZIONE" [width]="100" [resizeable]="false"
+        [sortable]="false">
 
     </ngx-datatable-column>
 
