@@ -4,6 +4,6 @@
   src: url('~node_modules/@swimlane/ngx-datatable/assets/fonts/data-table.ttf')
 }*/
 datatable-header-cell {
-    text-wrap: wrap;
-    word-break: break-all;
+    text-wrap: wrap !important;
+    word-break: break-all !important;
 }
