@@ -1,6 +1,7 @@
 .testata{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 input[type=text], input[type=date], select {
@@ -12,35 +13,84 @@ input[type=text], input[type=date], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
+select{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    -moz-appearance: none;
+    appearance: none;
+}
 .formaDelForm {
     // display: flex;
     // justify-content: space-between;
 
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 15% 28% 20% auto;
+    grid-gap: 5px 25px;
+    margin: 1.5% 0%;
+}
+.formaDelForm-2 {
+    display: grid;
+    grid-template-columns: 22% 38% auto;
     grid-gap: 5px 25px;
 }
 .btn-cerca{
-    background: blue;
-    border-color: blue;
+    background: rgb(0, 135, 225);
+    border-color: rgb(0, 135, 225);
     border-radius: 4px;
     display: flex;
     align-items: center;
     color: white;
+    padding: 0.5% 2.5%;
+    cursor:pointer;
+}
+.btn-cerca:hover{
+    background: white;
+    border-color: white;
+    color: rgb(0, 135, 225);
+}
+.btn-azzera{
+    padding: 0.5% 1.5%;
+    margin-right: 2%;
 }
 .btn-inserisci{
     background: white;
-    border-color: blue;
+    border-color: rgb(0, 135, 225);
     border-radius: 4px;
     display: flex;
     align-items: center;
-    color: blue;
+    color: rgb(0, 135, 225);
+    cursor:pointer;
+}
+.btn-inserisci:hover{
+    background: rgb(0, 135, 225);
+    border-color: white;
+    color: white;
 }
 .btn-nascondi{
     display: flex;
     align-items: center;
     border: none;
     background: none;
-    color: blue;
+    color: rgb(0, 135, 225);
+    margin: 1% 0;
+    cursor: pointer;
 }
+.btn-nascondi:hover{
+    border-radius: 4px;
+    background: rgb(244, 244, 255);
+    color: rgb(0, 135, 225);
+}
+.btn-ins-cer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.div-check{
+    display: none;
+}
+/*
+.btn-check:focus + .div-check {
+    display: block;
+}*/

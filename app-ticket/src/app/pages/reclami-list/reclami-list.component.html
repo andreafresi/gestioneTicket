@@ -3,7 +3,7 @@
 <div>
     <div class="testata">
         <h2>RECLAMI</h2>
-        <button class="btn-inserisci">
+        <button class="btn-inserisci" style="height: 45px;">
             <span class="material-symbols-outlined">add</span> 
             INSERISCI UN RECLAMO
         </button>
@@ -30,13 +30,14 @@
                 </div>
                 <div>
                     <label for="gestione">Gestione </label><br>
-                    <select name="gestione" id="gestione">
+                    <select class="form-select" aria-label="Default select example" name="gestione" id="gestione">
                         <option value="uno">uno</option>
                         <option value="due">due</option>
                         <option value="tre">tre</option>
                     </select>
                 </div>
-                
+            </div>
+            <div class="formaDelForm-2">
                 <div>
                     <label for="data">Data segnalazione da a </label><br>
                     <input type="date" id="data" value="null" />
@@ -59,12 +60,12 @@
                 </div>
             </div>
             <div>
-                <button class="btn-nascondi">
+                <button class="btn-nascondi" id="btn-check" onclick="document.getElementsByClassName('div-check')[0].style.display ='block';">
                     <span class="material-symbols-outlined">filter_list</span> 
                     NASCONDI FILTRI AVANZATI
                 </button>
             </div>
-            <div class="formaDelForm">
+            <div class="formaDelForm "> <!-- div-check -->
                 <div>
                     <label for="idReclamo">ID Reclamo </label><br>
                     <input type="text" id="idReclamo">
@@ -89,8 +90,8 @@
             </div>
 
         </form>
-        <div>
-            <button class="btn-inserisci">AZZERA</button>
+        <div class="btn-ins-cer">
+            <button class="btn-inserisci btn-azzera">AZZERA</button>
             <button class="btn-cerca">CERCA</button>
         </div>
     </div>
