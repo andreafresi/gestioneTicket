@@ -1,14 +1,16 @@
-/*
-.form-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  
-    .left-column,
-    .right-column {
-      width: calc(50% - 20px); // 10px di margine tra le colonne
-    }
-  }
+/* COLORI 
+sfondo -> 
+    bianco
+Quello che sembra grigino nell'edit -> 
+	  rgba(248,249,249,255) 
+Il blu bottoni -> 
+	  rgba(0,112,203,255)
+Quello che sembra grigino nel list -> 
+	  rgba(242,247,251,255)
+font ->	
+	  rgba(82,104,123,255)
+bordi input ->
+	  rgba(218,231,241,255)
 */
 .formaDelForm {
   display: grid;
@@ -68,8 +70,8 @@ select{
 }
 
 .btn-inser{
-  background: rgb(0, 135, 225);
-  border-color: rgb(0, 135, 225);
+  background: rgba(0,112,203,255);
+  border-color: rgba(0,112,203,255);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -80,7 +82,7 @@ select{
 .btn-inser:hover{
   background: white;
   border-color: white;
-  color: rgb(0, 135, 225);
+  color: rgba(0,112,203,255);
 }
 
 .btn-null{
@@ -93,11 +95,11 @@ select{
   padding: 0.5% 1.5%;
   cursor:pointer;
   margin-right: 2%;
-  border-color: rgb(0, 135, 225);
+  border-color: rgba(0,112,203,255);
 }
 .btn-null:hover{
-  background: rgb(0, 135, 225);
-  border-color: rgb(0, 135, 225);
+  background: rgba(0,112,203,255);
+  border-color: rgba(0,112,203,255);
   color: white;
 }
 
@@ -145,7 +147,7 @@ select{
   }
   
   input:checked + .slider {
-    background-color: #2196f3;
+    background-color: rgba(0,112,203,255);
   }
   
   input:focus + .slider {
