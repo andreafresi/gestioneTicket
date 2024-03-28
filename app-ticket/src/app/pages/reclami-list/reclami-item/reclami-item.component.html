@@ -1,48 +1,48 @@
-<p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-<ngx-datatable class="material" [rows]="listReclami" [columnMode]="'force'"
-[headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+<p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+</p>
+<ngx-datatable [rows]="listReclami" columnMode="force" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'"
+    [scrollbarV]="true" [scrollbarH]="true">
 
-    <ngx-datatable-column prop="id" name="ID RECLAMO" [maxWidth]="100">
-
-    </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="dataApertura" name="SEGNALATO IL" [maxWidth]="100">
+    <ngx-datatable-column prop="id" name="ID RECLAMO" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="dataApertura" name="PRESO IN CARICO IL" [maxWidth]="100">
+    <ngx-datatable-column prop="dataApertura" name="PRESO IN CARICO IL" [width]="100" [resizeable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="dataApertura" name="CHIUSO IL" [maxWidth]="100">
+
+    <ngx-datatable-column prop="dataApertura" name="CHIUSO IL" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="codiceNegozio" name="NEGOZIO" [maxWidth]="100">
+
+    <ngx-datatable-column prop="negozio.id" name="NEGOZIO" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="manager" name="MANAGER" [maxWidth]="100">
+
+    <ngx-datatable-column prop="negozio.manager" name="MANAGER" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="customer.nome" name="CLIENTE" [maxWidth]="100">
+
+    <ngx-datatable-column prop="customer.fullname" name="CLIENTE" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="stato" name="STATO" [maxWidth]="100">
+
+    <ngx-datatable-column prop="stato" name="STATO" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="gestione" name="GESTIONE" [maxWidth]="100">
+
+    <ngx-datatable-column prop="gestione" name="GESTIONE" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="causale" name="CAUSALE RECLAMO" [maxWidth]="100">
+
+    <ngx-datatable-column prop="causale" name="CAUSALE RECLAMO" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    
-    <ngx-datatable-column prop="soddisfazione" name="SODDISFAZIONE" [maxWidth]="100">
+
+    <ngx-datatable-column prop="soddisfazione" name="SODDISFAZIONE" [width]="100" [resizeable]="false" [sortable]="false">
+
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="" name="" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
 </ngx-datatable>

@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/*@import '@swimlane/ngx-datatable/assets/icons';
+@font-face{
+  font-family: data-table;
+  src: url('~node_modules/@swimlane/ngx-datatable/assets/fonts/data-table.ttf')
+}*/
+datatable-header-cell {
+    text-wrap: wrap;
+    word-break: break-all;
+}
