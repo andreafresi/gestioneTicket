@@ -3,9 +3,9 @@ export interface Reclamo{
     dataApertura?: string;
     codiceNegozio?: string;
     causale?: string;
-    descrizione?: string;
+    oggettoReclamo?: string;
     shopOnline?: boolean;
     regione?: string;
-    provincia?: string;
+    provinciaTik?: string;
     email?: string;
 }

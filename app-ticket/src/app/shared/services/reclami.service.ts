@@ -33,7 +33,7 @@ export class ReclamiService {
   getReclamoById(id: string): Observable<any> {
     return this.httpClient.get<Reclamo>('http://localhost:3000/reclamo/' + id);
   }
-  getClienteByMail(email: string) : Observable<any>{
+  getClienteByMail(email: any) : Observable<any>{
     return this.httpClient.get<Cliente>('http://localhost:3000/cliente/' + email);
   }
 

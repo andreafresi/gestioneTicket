@@ -51,10 +51,10 @@
             "dataApertura": "2024-03-27",
             "codiceNegozio": "1001",
             "causale": "Prodotto difettoso",
-            "descrizione": "Il prodotto acquistato ha un difetto di fabbricazione.",
+            "oggettoReclamo": "Il prodotto acquistato ha un difetto di fabbricazione.",
             "shopOnline": false,
             "regione": "Toscana",
-            "provincia": "FI",
+            "provinciaTik": "FI",
             "email": "mario.rossi@example.com"
         },
         {
@@ -62,10 +62,10 @@
             "dataApertura": "2024-03-26",
             "codiceNegozio": "1002",
             "causale": "Prodotto non conforme",
-            "descrizione": "Il prodotto ricevuto non corrisponde alla descrizione sul sito.",
+            "oggettoReclamo": "Il prodotto ricevuto non corrisponde alla descrizione sul sito.",
             "shopOnline": true,
             "regione": "Emilia-Romagna",
-            "provincia": "BO",
+            "provinciaTik": "BO",
             "email": "anna.verdi@example.com"
         },
         {
@@ -73,10 +73,10 @@
             "dataApertura": "2024-03-25",
             "codiceNegozio": "1003",
             "causale": "Ritardo nella consegna",
-            "descrizione": "Il mio ordine è in ritardo rispetto alla data prevista di consegna.",
+            "oggettoReclamo": "Il mio ordine è in ritardo rispetto alla data prevista di consegna.",
             "shopOnline": true,
             "regione": "Marche",
-            "provincia": "AN",
+            "provinciaTik": "AN",
             "email": "luigi.bianchi@example.com"
         }
     ],
