@@ -59,9 +59,6 @@ export class ReclamiEditComponent implements OnInit {
       provinciaTik: this.reclamo.provinciaTik,
     });
   }
-  editorStyle = {
-    height: '200px'
-  };
 
   deleteReclamo(): void {
     this.reclamiService.deleteReclamo(this.reclamo).subscribe(() =>
