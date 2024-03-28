@@ -55,7 +55,15 @@
             "shopOnline": false,
             "regione": "Toscana",
             "provinciaTik": "FI",
-            "email": "mario.rossi@example.com"
+            "customer": {
+                "email": "mario.rossi@example.com",
+                "nome": "Mario",
+                "cognome": "Rossi",
+                "cellulare": "3331234567",
+                "telefono": "0123456789",
+                "indirizzo": "Via Roma 1",
+                "provincia": "MI"
+            }
         },
         {
             "id": 2,
@@ -66,7 +74,15 @@
             "shopOnline": true,
             "regione": "Emilia-Romagna",
             "provinciaTik": "BO",
-            "email": "anna.verdi@example.com"
+            "customer": {
+                "email": "anna.verdi@example.com",
+                "nome": "Anna",
+                "cognome": "Verdi",
+                "cellulare": "3339876543",
+                "telefono": "0987654321",
+                "indirizzo": "Via Milano 2",
+                "provincia": "RM"
+            }
         },
         {
             "id": 3,
@@ -77,7 +93,15 @@
             "shopOnline": true,
             "regione": "Marche",
             "provinciaTik": "AN",
-            "email": "luigi.bianchi@example.com"
+            "customer": {
+                "email": "luigi.bianchi@example.com",
+                "nome": "Luigi",
+                "cognome": "Bianchi",
+                "cellulare": "3335554444",
+                "telefono": "0456789123",
+                "indirizzo": "Via Napoli 3",
+                "provincia": "NA"
+            }
         }
     ],
     "regione": [
