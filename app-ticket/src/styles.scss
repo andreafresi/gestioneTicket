@@ -1,9 +1,19 @@
-/*@import '@swimlane/ngx-datatable/assets/icons';
-@font-face{
-  font-family: data-table;
-  src: url('~node_modules/@swimlane/ngx-datatable/assets/fonts/data-table.ttf')
-}*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 datatable-header-cell {
     text-wrap: wrap !important;
     word-break: break-all !important;
+    border-left: 1px solid black;
+}
+
+.datatable-body-cell {
+    border-left: 1px solid black;
+    justify-content: center;
+
+    i {
+        cursor: pointer;
+    }
+
 }
