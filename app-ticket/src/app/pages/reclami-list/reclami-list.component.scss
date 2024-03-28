@@ -22,49 +22,25 @@ input[type=text], input[type=date], select {
     grid-gap: 5px 25px;
 }
 .btn-cerca{
-    background: rgb(0, 135, 225);
-    border-color: rgb(0, 135, 225);
+    background: blue;
+    border-color: blue;
     border-radius: 4px;
     display: flex;
     align-items: center;
     color: white;
-    padding: 0.5% 2.5%;
-}
-.btn-cerca:hover{
-    background: white;
-    border-color: white;
-    color: rgb(0, 135, 225);
-}
-.btn-azzera{
-    padding: 0.5% 2.5%;
 }
 .btn-inserisci{
     background: white;
-    border-color: rgb(0, 135, 225);
+    border-color: blue;
     border-radius: 4px;
     display: flex;
     align-items: center;
-    color: rgb(0, 135, 225);
-}
-.btn-inserisci:hover{
-    background: rgb(0, 135, 225);
-    border-color: white;
-    color: white;
+    color: blue;
 }
 .btn-nascondi{
     display: flex;
     align-items: center;
     border: none;
     background: none;
-    color: rgb(0, 135, 225);
-    margin: 1% 0;
-}
-.btn-nascondi:hover{
-    border-radius: 4px;
-    background: rgb(244, 244, 255);
-    color: rgb(0, 135, 225);
-}
-.btn-ins-cer{
-    display: flex;
-    justify-content: flex-end;
+    color: blue;
 }

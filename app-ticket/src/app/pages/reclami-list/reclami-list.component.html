@@ -5,24 +5,24 @@
         <h2>RECLAMI</h2>
         <button class="btn-inserisci">
             <span class="material-symbols-outlined">add</span> 
-            <b>INSERISCI UN RECLAMO</b>
+            INSERISCI UN RECLAMO
         </button>
     </div>
     <hr>
     <div>
-        <form [formGroup]="ricercaForm" action="">
+        <form action="">
             <div class="formaDelForm">
                 <div>
                     <label for="codiceNegozio">Codice Negozio </label><br>
-                    <input type="text" id="codiceNegozio" formControlName="codice">
+                    <input type="text" id="codiceNegozio">
                 </div>
                 <div>
                     <label for="descrizioneNegozio">Descrizione Negozio </label><br>
-                    <input type="text" id="descrizioneNegozio" formControlName="descrizione">
+                    <input type="text" id="descrizioneNegozio">
                 </div>
                 <div>
                     <label for="stato">Stato </label><br>
-                    <select name="stato" id="stato" formControlName="stato">
+                    <select name="stato" id="stato">
                         <option value="uno">uno</option>
                         <option value="due">due</option>
                         <option value="tre">tre</option>
@@ -30,7 +30,7 @@
                 </div>
                 <div>
                     <label for="gestione">Gestione </label><br>
-                    <select name="gestione" id="gestione" formControlName="gestione">
+                    <select name="gestione" id="gestione">
                         <option value="uno">uno</option>
                         <option value="due">due</option>
                         <option value="tre">tre</option>
@@ -39,11 +39,11 @@
                 
                 <div>
                     <label for="data">Data segnalazione da a </label><br>
-                    <input type="date" id="data" value="null" formControlName="data"/>
+                    <input type="date" id="data" value="null" />
                 </div>
                 <div>
                     <label for="area">Area </label><br>
-                    <select name="area" id="area" formControlName="area">
+                    <select name="area" id="area">
                         <option value="uno">uno</option>
                         <option value="due">due</option>
                         <option value="tre">tre</option>
@@ -51,7 +51,7 @@
                 </div>
                 <div>
                     <label for="causale">Causale </label><br>
-                    <select name="causale" id="causale" formControlName="causale">
+                    <select name="causale" id="causale">
                         <option value="uno">uno</option>
                         <option value="due">due</option>
                         <option value="tre">tre</option>
@@ -61,26 +61,26 @@
             <div>
                 <button class="btn-nascondi">
                     <span class="material-symbols-outlined">filter_list</span> 
-                     NASCONDI FILTRI AVANZATI
+                    NASCONDI FILTRI AVANZATI
                 </button>
             </div>
             <div class="formaDelForm">
                 <div>
                     <label for="idReclamo">ID Reclamo </label><br>
-                    <input type="text" id="idReclamo" formControlName="idReclamo">
+                    <input type="text" id="idReclamo">
                 </div>
                 <div>
                     <label for="nome">Nome cliente </label><br>
-                    <input type="text" id="nome" formControlName="nome">
+                    <input type="text" id="nome">
                 </div>
 
                 <div>
-                    <label for="cognome">Cognome cliente </label><br>
-                    <input type="text" id="cognome" formControlName="cognome">
+                    <label for="cognome">Cognome clinete </label><br>
+                    <input type="text" id="cognome">
                 </div>
                 <div>
                     <label for="banner">Banner </label><br>
-                    <select name="banner" id="banner" formArrayName="banner">
+                    <select name="banner" id="banner">
                         <option value="uno">uno</option>
                         <option value="due">due</option>
                         <option value="tre">tre</option>
@@ -89,9 +89,9 @@
             </div>
 
         </form>
-        <div class="btn-ins-cer">
-            <button class="btn-inserisci btn-azzera" style="margin-right: 1.5%;"><b>AZZERA</b></button>
-            <button class="btn-cerca"><b>CERCA</b></button>
+        <div>
+            <button class="btn-inserisci">AZZERA</button>
+            <button class="btn-cerca">CERCA</button>
         </div>
     </div>
 </div>

@@ -33,9 +33,6 @@ export class ReclamiService {
   getReclamoById(id: string): Observable<any> {
     return this.httpClient.get<Reclamo>('http://localhost:3000/reclamo/' + id);
   }
-  getClienteByMail(email: any) : Observable<any>{
-    return this.httpClient.get<Cliente>('http://localhost:3000/cliente/' + email);
-  }
 
   getNegozioById(id: string) : Observable<any>{
     return this.httpClient.get<Negozio>('http://localhost:3000/reclamo/' + id);
@@ -55,11 +52,7 @@ export class ReclamiService {
     );
   }
 
-  addCliente(cliente: Cliente): Observable<any> {
-    return this.httpClient.post('http://localhost:3000/cliente/', cliente);
-  }
-
-  addReclamo(cliente: Cliente): Observable<any> {
-    return this.httpClient.post('http://localhost:3000/reclamo/', cliente);
+  addReclamo(reclamo: Reclamo): Observable<any> {
+    return this.httpClient.post('http://localhost:3000/reclamo/', reclamo);
   }
 }

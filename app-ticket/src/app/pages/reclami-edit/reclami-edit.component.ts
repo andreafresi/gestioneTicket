@@ -15,7 +15,6 @@ import { ReclamiService } from 'src/app/shared/services/reclami.service';
 export class ReclamiEditComponent implements OnInit{
   
   reclamo: Reclamo ={}
-  cliente: Cliente ={}
 
   constructor(
     private activeRoute:ActivatedRoute,
@@ -45,18 +44,15 @@ export class ReclamiEditComponent implements OnInit{
     const id = this.activeRoute.snapshot.paramMap.get('id') ?? '';
     this.reclamiService.getReclamoById(id).subscribe((reclamoTrovato)=>{
       this.reclamo = reclamoTrovato
-      let emailRicerca= this.reclamo.email
-      this.reclamiService.getClienteByMail(emailRicerca).subscribe((clienteTrovato)=>{
-        this.cliente=clienteTrovato
       })
       this.detailForm.patchValue({
-        email: this.cliente.email,
-        nome: this.cliente.nome,
-        cognome: this.cliente.cognome,
-        cellulare: this.cliente.cellulare,
-        telefono: this.cliente.telefono,
-        indirizzo: this.cliente.indirizzo,
-        provincia: this.cliente.provincia,
+        email: this.reclamo.customer?.email,
+        nome: this.reclamo.customer?.nome,
+        cognome: this.reclamo.customer?.cognome,
+        cellulare: this.reclamo.customer?.cellulare,
+        telefono: this.reclamo.customer?.telefono,
+        indirizzo: this.reclamo.customer?.indirizzo,
+        provincia: this.reclamo.customer?.provincia,
         causale: this.reclamo.causale,
         oggettoReclamo: this.reclamo.oggettoReclamo,
         shopOnline: this.reclamo.shopOnline, 
@@ -66,27 +62,29 @@ export class ReclamiEditComponent implements OnInit{
       });
 
 
-    });
+    };
+
+    deleteReclamo():void{
+      this.reclamiService.deleteReclamo(this.reclamo).subscribe(()=>
+      setTimeout(() => {
+        window.alert('Reclamo cancellato correttamente')
+      }, 2000))
+  
+      this.router.navigate(['/reclami'])
+      
+    }
+  
+    addReclamo():void{
+      let reclamoAdd : Reclamo={}
+
+      // reclamoAdd.customer?.email = this.detailForm.controls['email'].value;
+      // this.reclamiService.addReclamo(clienteToAdd).subscribe(()=>
+  
+      setTimeout(() => {
+        window.alert('Cliente aggiunto correttamente')
+      }, 2000)
+  
+      this.router.navigate(['/reclami']); // navigazione alla pagina iniziale
+    }
   }
-  deleteReclamo():void{
-    this.reclamiService.deleteReclamo(this.reclamo).subscribe(()=>
-    setTimeout(() => {
-      window.alert('Reclamo cnacellato correttamente')
-    }, 2000))
 
-    this.router.navigate(['/reclami'])
-    
-  }
-
-  addReclamo():void{
-    let clienteToAdd= this.detailForm.getRawValue()
-    this.reclamiService.addCliente(clienteToAdd).subscribe(()=>
-
-    setTimeout(() => {
-      window.alert('Cliente aggiunto correttamente')
-    }, 2000))
-
-    this.router.navigate(['/reclami']); // navigazione alla pagina iniziale
-  }
-
-}
