@@ -1,0 +1,13 @@
+diff a/app-ticket/src/app/shared/services/reclami.service.ts b/app-ticket/src/app/shared/services/reclami.service.ts	(rejected hunks)
+@@ -28,5 +28,11 @@
+     return this.httpClient.get<Regione[]>('http://localhost:3000/regione')
+   }
+ 
++  getReclamoById(id: string) {
++    return this.httpClient.get<Reclamo>('http://localhost:3000/reclamo/' + id);
++  }
++  getClienteByMail(email: string) {
++    return this.httpClient.get<Cliente>('http://localhost:3000/cliente/' + email);
++  }
+ 
+ }
