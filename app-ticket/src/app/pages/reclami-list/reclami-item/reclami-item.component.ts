@@ -18,15 +18,14 @@ export class ReclamiItemComponent {
   }
 
   ngOnInit(): void {
-    this.getClienti();
     this.getReclami();
   }
 
-  getClienti() {
-    this.reclamiService.getClienti().subscribe((res) => {
-      this.listClienti = res;
-    });
-  }
+  // getClienti() {
+  //   this.reclamiService.getClienti().subscribe((res) => {
+  //     this.listClienti = res;
+  //   });
+  // }
 
   getReclami() {
     this.reclamiService.getReclami().subscribe((res) => {
