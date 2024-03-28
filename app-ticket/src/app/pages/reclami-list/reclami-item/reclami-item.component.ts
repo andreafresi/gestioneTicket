@@ -14,7 +14,8 @@ export class ReclamiItemComponent {
   listClienti: Cliente[] = []
   listReclami: Reclamo[] = []
 
-  constructor(private reclamiService: ReclamiService, private readonly router: Router){}
+  constructor(private reclamiService: ReclamiService, private readonly router: Router){
+  }
 
   ngOnInit(): void {
     this.getClienti();
@@ -33,10 +34,4 @@ export class ReclamiItemComponent {
     });
   }
 
-
-  rows = [
-    { id: 1, dataSegnalato: 'John', dataCarico: '', dataChiuso: '', idNegozio: '', manager: '', nomeCognome: '', stato: '', gestione: '', causale: '', soddisfazione: ''},
-    { id: 2, dataSegnalato: 'v', dataCarico: '', dataChiuso: '', idNegozio: '', manager: '', nomeCognome: '', stato: '', gestione: '', causale: '', soddisfazione: ''},
-    { id: 3, dataSegnalato: 'asda', dataCarico: '', dataChiuso: '', idNegozio: '', manager: '', nomeCognome: '', stato: '', gestione: '', causale: '', soddisfazione: ''}
-  ];
 }

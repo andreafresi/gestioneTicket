@@ -4,6 +4,7 @@
             "email": "mario.rossi@example.com",
             "nome": "Mario",
             "cognome": "Rossi",
+            "fullname": "Mario Rossi",
             "cellulare": "3331234567",
             "telefono": "0123456789",
             "indirizzo": "Via Roma 1",
@@ -13,6 +14,7 @@
             "email": "anna.verdi@example.com",
             "nome": "Anna",
             "cognome": "Verdi",
+            "fullname": "Anna Verdi",
             "cellulare": "3339876543",
             "telefono": "0987654321",
             "indirizzo": "Via Milano 2",
@@ -22,6 +24,7 @@
             "email": "luigi.bianchi@example.com",
             "nome": "Luigi",
             "cognome": "Bianchi",
+            "fullname": "Luigi Bianchi",
             "cellulare": "3335554444",
             "telefono": "0456789123",
             "indirizzo": "Via Napoli 3",
@@ -49,7 +52,11 @@
         {
             "id": 1,
             "dataApertura": "2024-03-27",
-            "codiceNegozio": "1001",
+            "negozio": {
+                "id": "1001",
+                "descrizione": "Negozio di abbigliamento",
+                "manager": "Giovanni Rossi"
+            },
             "causale": "Prodotto difettoso",
             "oggettoReclamo": "Il prodotto acquistato ha un difetto di fabbricazione.",
             "shopOnline": false,
@@ -68,7 +75,11 @@
         {
             "id": 2,
             "dataApertura": "2024-03-26",
-            "codiceNegozio": "1002",
+            "negozio": {
+                "id": "1002",
+                "descrizione": "Negozio di elettronica",
+                "manager": "Maria Verdi"
+            },
             "causale": "Prodotto non conforme",
             "oggettoReclamo": "Il prodotto ricevuto non corrisponde alla descrizione sul sito.",
             "shopOnline": true,
@@ -87,7 +98,11 @@
         {
             "id": 3,
             "dataApertura": "2024-03-25",
-            "codiceNegozio": "1003",
+            "negozio": {
+                "id": "1003",
+                "descrizione": "Negozio di alimentari",
+                "manager": "Luigi Bianchi"
+            },
             "causale": "Ritardo nella consegna",
             "oggettoReclamo": "Il mio ordine è in ritardo rispetto alla data prevista di consegna.",
             "shopOnline": true,

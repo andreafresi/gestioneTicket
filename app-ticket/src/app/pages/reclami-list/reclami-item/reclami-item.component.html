@@ -1,24 +1,24 @@
 <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-<ngx-datatable class="material" [rows]="rows" [columnMode]="'force'"
+<ngx-datatable class="material" [rows]="listReclami" [columnMode]="'force'"
 [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
 
     <ngx-datatable-column prop="id" name="ID RECLAMO" [maxWidth]="100">
 
     </ngx-datatable-column>
     
-    <ngx-datatable-column prop="dataSegnalato" name="SEGNALATO IL" [maxWidth]="100">
+    <ngx-datatable-column prop="dataApertura" name="SEGNALATO IL" [maxWidth]="100">
 
     </ngx-datatable-column>
     
-    <ngx-datatable-column prop="dataCarico" name="PRESO IN CARICO IL" [maxWidth]="100">
+    <ngx-datatable-column prop="dataApertura" name="PRESO IN CARICO IL" [maxWidth]="100">
 
     </ngx-datatable-column>
     
-    <ngx-datatable-column prop="dataChiuso" name="CHIUSO IL" [maxWidth]="100">
+    <ngx-datatable-column prop="dataApertura" name="CHIUSO IL" [maxWidth]="100">
 
     </ngx-datatable-column>
     
-    <ngx-datatable-column prop="idNegozio" name="NEGOZIO" [maxWidth]="100">
+    <ngx-datatable-column prop="codiceNegozio" name="NEGOZIO" [maxWidth]="100">
 
     </ngx-datatable-column>
     
@@ -26,7 +26,7 @@
 
     </ngx-datatable-column>
     
-    <ngx-datatable-column prop="nomeCognome" name="CLIENTE" [maxWidth]="100">
+    <ngx-datatable-column prop="customer.nome" name="CLIENTE" [maxWidth]="100">
 
     </ngx-datatable-column>
     
