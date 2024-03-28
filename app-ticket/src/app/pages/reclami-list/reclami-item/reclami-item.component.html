@@ -39,7 +39,7 @@
     <ngx-datatable-column prop="soddisfazione" name="SODDISFAZIONE" [width]="100" [resizeable]="false"
         [sortable]="false">
         <ng-template let-soddisfazione="value" ngx-datatable-cell-template>
-            <span *ngIf="soddisfazione" class="material-symbols-outlined" style="color: green;">
+            <span *ngIf="soddisfazione" class="material-symbols-outlined soddisfazione">
                 recommend
             </span>
         </ng-template>
@@ -47,7 +47,7 @@
 
     <ngx-datatable-column prop="id" name="" [width]="100" [resizeable]="false" [sortable]="false">
         <ng-template let-id="value" ngx-datatable-cell-template>
-            <span class="material-symbols-outlined" (click)="openDetail(id)">
+            <span class="material-symbols-outlined search" (click)="openDetail(id)">
                 search
             </span>
         </ng-template>

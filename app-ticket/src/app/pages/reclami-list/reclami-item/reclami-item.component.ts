@@ -35,7 +35,7 @@ export class ReclamiItemComponent {
   }
 
   openDetail(id: string) {
-    this.router.navigate
+    this.router.navigate(['reclami', id])
   }
 
 }
