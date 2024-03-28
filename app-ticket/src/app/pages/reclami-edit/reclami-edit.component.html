@@ -1,65 +1,115 @@
+<div style="margin: 0 0.5%;">
+  <div class="testata">
+    <h2>RECLAMO</h2>
+  </div>
+  <hr style="margin: 2.3% 0;">
 
-<form [formGroup]="detailForm" class="form-container">
-  <div class="left-column">
-    <!-- Elementi nel riquadro sinistro -->
-    <div>
-      <div>
-        <label for="email">Email <span>*</span></label>
-        <input type="text" id="email" formControlName="email" />
+  <div>
+    <form [formGroup]="detailForm" class="formaDelForm">
+      <div class="left-column">
+        <!-- Elementi nel riquadro sinistro -->
+          <p>DATI CLIENTE</p>
+          <hr>
+          <div class="lx-sotto">
+            <div>
+              <label for="nome" class="per-pallino">Nome <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label> 
+              <input type="text" id="nome" formControlName="nome" />
+            </div>
+            <div>
+              <label for="cognome" class="per-pallino">Cognome <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
+              <input type="text" id="cognome" formControlName="cognome" />
+            </div>
+            <div>
+              <label for="email" class="per-pallino">Email <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
+              <input type="text" id="email" formControlName="email" />
+            </div>
+            <div class="per-tel">
+              <div>
+                <label for="telefono">Telefono</label>
+                <input type="text" id="telefono" formControlName="telefono" />
+              </div>
+              <div>
+                <label for="cellulare" class="per-pallino">Cellulare <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 4%;"></label>
+                <input type="text" id="cellulare" formControlName="cellulare" />
+              </div>
+            </div>
+            <div>
+              <label for="indirizzo">Indirizzo </label>
+              <input type="text" id="indirizzo" formControlName="indirizzo" />
+            </div>
+            <div>
+              <label for="provincia" class="per-pallino">Provincia <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
+              <select name="provincia" id="provincia" formControlName="provincia">
+                  <option value="uno">uno</option>
+                  <option value="due">due</option>
+                  <option value="tre">tre</option>
+              </select>
+            </div>
+          </div>
+
       </div>
-      <div>
-        <label for="nome">Nome <span>*</span></label>
-        <input type="text" id="nome" formControlName="nome" />
-      </div>
-      <div>
-        <label for="cognome">Cognome <span>*</span></label>
-        <input type="text" id="cognome" formControlName="cognome" />
-      </div>
-      <div>
-        <label for="cellulare">Cellulare <span>*</span></label>
-        <input type="text" id="cellulare" formControlName="cellulare" />
-      </div>
-      <div>
-        <label for="telefono">Telefono <span>*</span></label>
-        <input type="text" id="telefono" formControlName="telefono" />
-      </div>
-      <div>
-        <label for="indirizzo">Indirizzo <span>*</span></label>
-        <input type="text" id="indirizzo" formControlName="indirizzo" />
-      </div>
-      <div>
-        <label for="provincia">Provincia <span>*</span></label>
-        <input type="text" id="provincia" formControlName="provincia" />
-      </div>
-    </div>
-  </div>
-  <div class="right-column">
-    <div>
-      <label for="causale">Causale <span>*</span></label>
-      <input type="text" id="causale" formControlName="causale" />
-    </div>
-    <div>
-      <label for="regione">Regione <span>*</span></label>
-      <input type="text" id="regione" formControlName="regione" />
-    </div>
-    <div>
-      <label for="provincia">Provincia <span>*</span></label>
-      <input type="text" id="provincia" formControlName="provinciaTik" />
-    </div>
-    <div>
-      <!-- Input per Oggetto Reclamo (utilizzando Quill) -->
-      <div>
-        
-        <quill-editor [style]="{'height':'200px'}" formControlName="oggetoReclamo" >Oggetto></quill-editor>
-      </div>
-      <div>
-      <!-- Input per Shop Online (utilizzando uno switch orizzontale) -->
-      <div class="container-switch">
-        <span>Shop Online</span>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
+
+      <div class="destra-column">
+        <div>
+          <label for="data" class="per-pallino">Data reclamo <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1%;"></label>
+          <input type="date" id="data" value="null" formControlName="data"/>
         </div>
-    </div>
+        <div class="per-causale">
+          <div>
+            <label for="banner" class="per-pallino">Banner <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
+            <select name="banner" id="banner">
+                <option value="uno">uno</option>
+                <option value="due">due</option>
+                <option value="tre">tre</option>
+            </select>
+          </div>
+          <div>
+            <label for="causale" class="per-pallino">Causale <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
+            <input type="text" id="causale" formControlName="causale" />
+          </div>
+        </div>
+  
+        <div>
+          <!-- Input per Oggetto Reclamo (utilizzando Quill) -->
+          <label for="ogg" class="per-pallino">Oggetto Reclamo <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1%;"></label>
+          <div>
+            <quill-editor [style]="{'height':'200px'}" formControlName="oggetoReclamo">Oggetto></quill-editor>
+          </div>
+
+          <div>
+            <!-- Input per Shop Online (utilizzando uno switch orizzontale) -->
+            <div class="container-switch">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+              <span>Shop Online</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="per-regione">
+          <div>
+            <label for="regione" class="per-pallino">Regione <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1.5%;"></label>
+            <input type="text" id="regione" formControlName="regione" />
+          </div>
+          <div>
+            <label for="provincia" class="per-pallino">Provincia <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 3%;"></label>
+            <input type="text" id="provincia" formControlName="provinciaTik" />
+          </div>
+        </div>
+        <div>
+          <label for="polo" class="per-pallino">Polo <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1%;"></label>
+          <input type="text" id="polo" formControlName="polo" />
+        </div>
+      </div>
+    </form>
   </div>
+
+  <hr style="margin: 2.3% 0;">
+  <div class="btn-ins-cer">
+    <button class="btn-null">ANNULA</button>
+    <button class="btn-inser">INSERISCI IL RECLAMO</button>
+  </div>
+</div>
