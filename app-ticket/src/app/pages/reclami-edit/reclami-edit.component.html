@@ -1,6 +1,3 @@
-<form [formGroup]="detailForm">
-  <div></div>
-</form>
 
 <form [formGroup]="detailForm" class="form-container">
   <div class="left-column">
@@ -51,9 +48,11 @@
     </div>
     <div>
       <!-- Input per Oggetto Reclamo (utilizzando Quill) -->
-      <div id="editor" formControlName="oggettoReclamo"></div>
-    </div>
-    <div>
+      <div>
+        
+        <quill-editor [style]="{'height':'200px'}" formControlName="oggetoReclamo" >Oggetto></quill-editor>
+      </div>
+      <div>
       <!-- Input per Shop Online (utilizzando uno switch orizzontale) -->
       <div class="container-switch">
         <span>Shop Online</span>
@@ -64,4 +63,3 @@
         </div>
     </div>
   </div>
-</form>

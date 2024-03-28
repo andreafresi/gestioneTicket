@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { ReclamiEditComponent } from './pages/reclami-edit/reclami-edit.component';
 import { ReclamiListComponent } from './pages/reclami-list/reclami-list.component';
 import { ReclamiItemComponent } from './pages/reclami-list/reclami-item/reclami-item.component';
-import { QuillModule } from 'ngx-quill';
+import { QuillEditorComponent, QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,9 @@ import { QuillModule } from 'ngx-quill';
     ReactiveFormsModule,
     HttpClientModule,
     NgxDatatableModule,
-    QuillModule
-   
+    QuillModule,
+    QuillEditorComponent,
+    QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
