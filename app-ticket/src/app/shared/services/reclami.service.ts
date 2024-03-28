@@ -5,6 +5,7 @@ import { Reclamo } from '../models/reclamo';
 import { Negozio } from '../models/negozio';
 import { Regione } from '../models/regione';
 import { Observable } from 'rxjs';
+import { OggettoFiltro } from '../models/oggettoFiltro';
 
 
 @Injectable({
@@ -37,6 +38,34 @@ export class ReclamiService {
   getNegozioById(id: string) : Observable<any>{
     return this.httpClient.get<Negozio>('http://localhost:3000/reclamo/' + id);
   }
+
+  getReclamiByFilter(filterObject: OggettoFiltro): Observable<Reclamo[]> {
+    return new Observable<Reclamo[]>(observer => {
+        this.getReclami().subscribe((reclami: Reclamo[]) => {
+            const reclamiFiltrati: Reclamo[] = [];
+            reclami.forEach(reclamo => {
+                // Aggiungi le tue condizioni di filtro qui
+                if (
+                    reclamo.negozio?.id === filterObject.codice &&
+                    reclamo.negozio?.descrizione?.includes(filterObject.descNegozio!) &&
+                    reclamo.stato === filterObject.stato &&
+                    reclamo.gestione === filterObject.gestione &&
+                    reclamo.dataApertura === filterObject.data &&
+                    reclamo.regione === filterObject.area &&
+                    reclamo.causale?.includes(filterObject.causale!) &&
+                    reclamo.id === filterObject.idReclamo &&
+                    reclamo.customer?.nome === filterObject.nome &&
+                    reclamo.customer?.cognome === filterObject.cognome
+                ) {
+                    reclamiFiltrati.push(reclamo);
+                }
+            });
+            observer.complete();
+            return reclamiFiltrati;
+            
+        });
+    });
+}
   
   updateReclamo(reclamo:Reclamo): Observable<any>{
     return this.httpClient.patch(

@@ -61,7 +61,9 @@ export class ReclamiListComponent {
 
     
 
-    return this.oggettoFiltro;
+    this.reclamiService.getReclamiByFilter(this.oggettoFiltro).subscribe((item)=>{
+      this.listReclamo=item;
+    })
   }
   
   
