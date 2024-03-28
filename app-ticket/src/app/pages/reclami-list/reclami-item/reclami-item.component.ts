@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { Cliente } from 'src/app/shared/models/cliente';
+import { Reclamo } from 'src/app/shared/models/reclamo';
+import { ReclamiService } from 'src/app/shared/services/reclami.service';
 
 @Component({
   selector: 'app-reclami-item',
@@ -6,5 +11,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./reclami-item.component.scss']
 })
 export class ReclamiItemComponent {
+  listClienti: Cliente[] = []
+  listReclami: Reclamo[] = []
 
+  constructor(private reclamiService: ReclamiService, private readonly router: Router){}
+
+  ngOnInit(): void {
+    this.getClienti();
+    this.getReclami();
+  }
+
+  getClienti() {
+    this.reclamiService.getClienti().subscribe((res) => {
+      this.listClienti = res;
+    });
+  }
+
+  getReclami() {
+    this.reclamiService.getReclami().subscribe((res) => {
+      this.listReclami = res;
+    });
+  }
+
+
+  rows = [
+    { id: 1, dataSegnalato: 'John', dataCarico: '', dataChiuso: '', idNegozio: '', manager: '', nomeCognome: '', stato: '', gestione: '', causale: '', soddisfazione: ''},
+    { id: 2, dataSegnalato: 'v', dataCarico: '', dataChiuso: '', idNegozio: '', manager: '', nomeCognome: '', stato: '', gestione: '', causale: '', soddisfazione: ''},
+    { id: 3, dataSegnalato: 'asda', dataCarico: '', dataChiuso: '', idNegozio: '', manager: '', nomeCognome: '', stato: '', gestione: '', causale: '', soddisfazione: ''}
+  ];
 }
