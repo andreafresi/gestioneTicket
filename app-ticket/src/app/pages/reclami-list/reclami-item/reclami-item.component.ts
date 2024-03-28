@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Cliente } from 'src/app/shared/models/cliente';
@@ -12,7 +12,7 @@ import { ReclamiService } from 'src/app/shared/services/reclami.service';
 })
 export class ReclamiItemComponent {
   listClienti: Cliente[] = []
-  listReclami: Reclamo[] = []
+  @Input() listReclami: Reclamo[] = []
 
   constructor(private reclamiService: ReclamiService, private readonly router: Router) {
   }
