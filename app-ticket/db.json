@@ -29,6 +29,26 @@
             "telefono": "0456789123",
             "indirizzo": "Via Napoli 3",
             "provincia": "NA"
+        },
+        {
+            "email": "paolo.gialli@example.com",
+            "nome": "Paolo",
+            "cognome": "Gialli",
+            "fullname": "Paolo Gialli",
+            "cellulare": "3331112222",
+            "telefono": "0365432198",
+            "indirizzo": "Via Venezia 4",
+            "provincia": "VE"
+        },
+        {
+            "email": "giulia.neri@example.com",
+            "nome": "Giulia",
+            "cognome": "Neri",
+            "fullname": "Giulia Neri",
+            "cellulare": "3334445555",
+            "telefono": "0789563214",
+            "indirizzo": "Via Torino 5",
+            "provincia": "TO"
         }
     ],
     "negozio": [
@@ -46,6 +66,16 @@
             "id": "1003",
             "descrizione": "Negozio di alimentari",
             "manager": "Luigi Bianchi"
+        },
+        {
+            "id": "1004",
+            "descrizione": "Negozio di giocattoli",
+            "manager": "Marco Moretti"
+        },
+        {
+            "id": "1005",
+            "descrizione": "Negozio di libri",
+            "manager": "Roberto Andreini"
         }
     ],
     "reclamo": [
@@ -62,10 +92,14 @@
             "shopOnline": false,
             "regione": "Toscana",
             "provinciaTik": "FI",
+            "soddisfazione": true,
+            "stato": "Assegnato",
+            "gestione": "Chiuso",
             "customer": {
                 "email": "mario.rossi@example.com",
                 "nome": "Mario",
                 "cognome": "Rossi",
+                "fullname": "Mario Rossi",
                 "cellulare": "3331234567",
                 "telefono": "0123456789",
                 "indirizzo": "Via Roma 1",
@@ -85,10 +119,14 @@
             "shopOnline": true,
             "regione": "Emilia-Romagna",
             "provinciaTik": "BO",
+            "soddisfazione": false,
+            "stato": "Assegnato",
+            "gestione": "Aperto",
             "customer": {
                 "email": "anna.verdi@example.com",
                 "nome": "Anna",
                 "cognome": "Verdi",
+                "fullname": "Anna Verdi",
                 "cellulare": "3339876543",
                 "telefono": "0987654321",
                 "indirizzo": "Via Milano 2",
@@ -108,14 +146,72 @@
             "shopOnline": true,
             "regione": "Marche",
             "provinciaTik": "AN",
+            "soddisfazione": true,
+            "stato": "Non assegnato",
+            "gestione": "Aperto",
             "customer": {
                 "email": "luigi.bianchi@example.com",
                 "nome": "Luigi",
                 "cognome": "Bianchi",
+                "fullname": "Luigi Bianchi",
                 "cellulare": "3335554444",
                 "telefono": "0456789123",
                 "indirizzo": "Via Napoli 3",
                 "provincia": "NA"
+            }
+        },
+        {
+            "id": 4,
+            "dataApertura": "2024-03-24",
+            "negozio": {
+                "id": "1004",
+                "descrizione": "Negozio di giocattoli",
+                "manager": "Marco Moretti"
+            },
+            "causale": "Prodotto danneggiato durante la consegna",
+            "oggettoReclamo": "Il giocattolo ricevuto è danneggiato a causa di un'imballaggio non adeguato.",
+            "shopOnline": true,
+            "regione": "Lombardia",
+            "provinciaTik": "MI",
+            "soddisfazione": false,
+            "stato": "Assegnato",
+            "gestione": "Chiuso",
+            "customer": {
+                "email": "paolo.gialli@example.com",
+                "nome": "Paolo",
+                "cognome": "Gialli",
+                "fullname": "Paolo Gialli",
+                "cellulare": "3331112222",
+                "telefono": "0365432198",
+                "indirizzo": "Via Venezia 4",
+                "provincia": "VE"
+            }
+        },
+        {
+            "id": 5,
+            "dataApertura": "2024-03-23",
+            "negozio": {
+                "id": "1005",
+                "descrizione": "Negozio di libri",
+                "manager": "Roberto Andreini"
+            },
+            "causale": "Prodotto errato spedito",
+            "oggettoReclamo": "Il libro ricevuto è diverso da quello ordinato.",
+            "shopOnline": true,
+            "regione": "Veneto",
+            "provinciaTik": "VE",
+            "soddisfazione": false,
+            "stato": "Non assegnato",
+            "gestione": "Aperto",
+            "customer": {
+                "email": "giulia.neri@example.com",
+                "nome": "Giulia",
+                "cognome": "Neri",
+                "fullname": "Giulia Neri",
+                "cellulare": "3334445555",
+                "telefono": "0789563214",
+                "indirizzo": "Via Torino 5",
+                "provincia": "TO"
             }
         }
     ],

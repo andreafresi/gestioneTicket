@@ -1,11 +1,10 @@
-<p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-</p>
-<ngx-datatable [rows]="listReclami" columnMode="force" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
+<ngx-datatable [rows]="listReclami" columnMode="force" [headerHeight]="50" [footerHeight]="50" [rowHeight]="55">
 
     <ngx-datatable-column prop="id" name="ID RECLAMO" [width]="100" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
-    <ngx-datatable-column prop="dataApertura" name="PRESO IN CARICO IL" [width]="40" [resizeable]="false">
+
+    <ngx-datatable-column prop="dataApertura" name="PRESO IN CARICO IL" [width]="60" [resizeable]="false">
 
     </ngx-datatable-column>
 
@@ -33,16 +32,24 @@
 
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="causale" name="CAUSALE RECLAMO" [width]="100" [resizeable]="false" [sortable]="false">
+    <ngx-datatable-column prop="causale" name="CAUSALE RECLAMO" [width]="150" [resizeable]="false" [sortable]="false">
 
     </ngx-datatable-column>
 
     <ngx-datatable-column prop="soddisfazione" name="SODDISFAZIONE" [width]="100" [resizeable]="false"
         [sortable]="false">
-
+        <ng-template let-soddisfazione="value" ngx-datatable-cell-template>
+            <span *ngIf="soddisfazione" class="material-symbols-outlined" style="color: green;">
+                recommend
+            </span>
+        </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="" name="" [width]="100" [resizeable]="false" [sortable]="false">
-
+    <ngx-datatable-column prop="id" name="" [width]="100" [resizeable]="false" [sortable]="false">
+        <ng-template let-id="value" ngx-datatable-cell-template>
+            <span class="material-symbols-outlined" (click)="openDetail(id)">
+                search
+            </span>
+        </ng-template>
     </ngx-datatable-column>
 </ngx-datatable>

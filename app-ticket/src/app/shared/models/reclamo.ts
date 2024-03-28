@@ -11,4 +11,7 @@ export interface Reclamo {
   regione?: string;
   provinciaTik?: string;
   customer?: Cliente;
+  soddisfazione?: boolean;
+  stato?: string;
+  gestione?: string;
 }

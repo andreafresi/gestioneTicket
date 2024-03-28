@@ -14,7 +14,7 @@ export class ReclamiItemComponent {
   listClienti: Cliente[] = []
   listReclami: Reclamo[] = []
 
-  constructor(private reclamiService: ReclamiService, private readonly router: Router){
+  constructor(private reclamiService: ReclamiService, private readonly router: Router) {
   }
 
   ngOnInit(): void {
@@ -32,6 +32,10 @@ export class ReclamiItemComponent {
     this.reclamiService.getReclami().subscribe((res) => {
       this.listReclami = res;
     });
+  }
+
+  openDetail(id: string) {
+    this.router.navigate
   }
 
 }

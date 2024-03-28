@@ -4,12 +4,23 @@ body {
 
 datatable-header-cell {
     text-wrap: wrap !important;
-    word-break: break-all !important;
-    border-left: 1px solid black;
+    background-color: rgba(242,247,251,255);
+    font-size: 0.95rem;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .datatable-body-cell {
-    border-left: 1px solid black;
+    text-wrap: wrap !important;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-bottom: 2px solid rgb(186, 186, 186);
     justify-content: center;
 
     i {
