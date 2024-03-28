@@ -4,6 +4,8 @@ import { Cliente } from '../models/cliente';
 import { Reclamo } from '../models/reclamo';
 import { Negozio } from '../models/negozio';
 import { Regione } from '../models/regione';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,28 +30,36 @@ export class ReclamiService {
     return this.httpClient.get<Regione[]>('http://localhost:3000/regione')
   }
 
-  getReclamoById(id: string) {
+  getReclamoById(id: string): Observable<any> {
     return this.httpClient.get<Reclamo>('http://localhost:3000/reclamo/' + id);
   }
-  getClienteByMail(email: string) {
+  getClienteByMail(email: string) : Observable<any>{
     return this.httpClient.get<Cliente>('http://localhost:3000/cliente/' + email);
   }
 
-  getNegozioById(id: string) {
+  getNegozioById(id: string) : Observable<any>{
     return this.httpClient.get<Negozio>('http://localhost:3000/reclamo/' + id);
   }
   
-  updateReclamo(reclamo:Reclamo){
+  updateReclamo(reclamo:Reclamo): Observable<any>{
     return this.httpClient.patch(
       `http://localhost:3000/reclamo/${reclamo.id}`,
       reclamo
     );
   }
 
-  deleteReclamo(reclamo: any) {
+  deleteReclamo(reclamo: any): Observable<any> {
     return this.httpClient.delete(
       `http://localhost:3000/reclamo/${reclamo.id}`,
       reclamo
     );
+  }
+
+  addCliente(cliente: Cliente): Observable<any> {
+    return this.httpClient.post('http://localhost:3000/cliente/', cliente);
+  }
+
+  addReclamo(cliente: Cliente): Observable<any> {
+    return this.httpClient.post('http://localhost:3000/reclamo/', cliente);
   }
 }
