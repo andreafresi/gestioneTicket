@@ -1,26 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReclamiEditComponent } from './pages/reclami-edit/reclami-edit.component';
 import { ReclamiListComponent } from './pages/reclami-list/reclami-list.component';
 import { ReclamiItemComponent } from './pages/reclami-list/reclami-item/reclami-item.component';
-import { ReclamiEditComponent } from './pages/reclami-edit/reclami-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReclamiListComponent,
-    ReclamiItemComponent, 
     ReclamiEditComponent,
+    ReclamiListComponent,
+    ReclamiItemComponent,
   ],
   imports: [
-    NgxDatatableModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxDatatableModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
