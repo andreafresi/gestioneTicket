@@ -8,22 +8,21 @@ import { OggettoFiltro } from 'src/app/shared/models/oggettoFiltro';
 @Component({
   selector: 'app-reclami-list',
   templateUrl: './reclami-list.component.html',
-  styleUrls: ['./reclami-list.component.scss']
+  styleUrls: ['./reclami-list.component.scss'],
 })
 export class ReclamiListComponent {
   listReclamo: Reclamo[] = [];
-  oggettoFiltro : OggettoFiltro ={}
+  oggettoFiltro: OggettoFiltro = {};
 
   constructor(
-    private activeRoute:ActivatedRoute,
+    private activeRoute: ActivatedRoute,
     private router: Router,
     private reclamiService: ReclamiService,
     private formBuilder: FormBuilder
-  ){}
-
+  ) {}
 
   ricercaForm: FormGroup = this.formBuilder.group({
-    codice : [''],
+    codice: [''],
     descrizioneNegozio: [''],
     stato: [''],
     gestione: [''],
@@ -32,11 +31,13 @@ export class ReclamiListComponent {
     causale: [''],
     idReclamo: [''],
     nome: [''],
-    cognome: [''], 
+    cognome: [''],
     banner: [''],
-  })
+  });
 
- 
+  goToReclamiNew() {
+    this.router.navigate(['reclami/new']);
+  }
 
   ngOnInit(): void {
     this.reclamiService.getReclami();
@@ -45,31 +46,26 @@ export class ReclamiListComponent {
     this.reclamiService.getReclami().subscribe((res) => {
       this.listReclamo = res;
     });
-  } 
-
-  searchFilter(){
-    this.oggettoFiltro.codice = this.ricercaForm.controls["codice"].value;
-    this.oggettoFiltro.descNegozio = this.ricercaForm.controls["descrizioneNegozio"].value;
-    this.oggettoFiltro.stato = this.ricercaForm.controls["stato"].value;
-    this.oggettoFiltro.gestione = this.ricercaForm.controls["gestione"].value;
-    this.oggettoFiltro.data = this.ricercaForm.controls["data"].value;
-    this.oggettoFiltro.area = this.ricercaForm.controls["area"].value;
-    this.oggettoFiltro.causale = this.ricercaForm.controls["causale"].value;
-    this.oggettoFiltro.idReclamo = this.ricercaForm.controls["idReclamo"].value;
-    this.oggettoFiltro.nome = this.ricercaForm.controls["nome"].value;
-    this.oggettoFiltro.cognome = this.ricercaForm.controls["cognome"].value;
-
-    
-
-    this.reclamiService.getReclamiByFilter(this.oggettoFiltro).subscribe((item)=>{
-      this.listReclamo=item;
-    })
-  }
-  
-  
-
-  getReclamiAttivi(){
-    return this.listReclamo;
   }
 
+  searchFilter(): any {
+    this.oggettoFiltro.codice = this.ricercaForm.controls['codice'].value;
+    this.oggettoFiltro.descNegozio =
+      this.ricercaForm.controls['descrizioneNegozio'].value;
+    this.oggettoFiltro.stato = this.ricercaForm.controls['stato'].value;
+    this.oggettoFiltro.gestione = this.ricercaForm.controls['gestione'].value;
+    this.oggettoFiltro.data = this.ricercaForm.controls['data'].value;
+    this.oggettoFiltro.area = this.ricercaForm.controls['area'].value;
+    this.oggettoFiltro.causale = this.ricercaForm.controls['causale'].value;
+    this.oggettoFiltro.idReclamo = this.ricercaForm.controls['idReclamo'].value;
+    this.oggettoFiltro.nome = this.ricercaForm.controls['nome'].value;
+    this.oggettoFiltro.cognome = this.ricercaForm.controls['cognome'].value;
+
+    this.getReclami;
+
+    let reclami = this.reclamiService.getReclamiByFilter(
+      this.oggettoFiltro,
+      this.listReclamo
+    );
+  }
 }

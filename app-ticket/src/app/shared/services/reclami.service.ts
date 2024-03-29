@@ -6,6 +6,7 @@ import { Negozio } from '../models/negozio';
 import { Regione } from '../models/regione';
 import { Observable } from 'rxjs';
 import { OggettoFiltro } from '../models/oggettoFiltro';
+import { ReclamiListComponent } from 'src/app/pages/reclami-list/reclami-list.component';
 
 
 @Injectable({
@@ -13,7 +14,9 @@ import { OggettoFiltro } from '../models/oggettoFiltro';
 })
 export class ReclamiService {
 
-  constructor(private readonly httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) {}
+
+  
 
   getClienti(){
     return this.httpClient.get<Cliente[]>('http://localhost:3000/cliente')
@@ -39,33 +42,31 @@ export class ReclamiService {
     return this.httpClient.get<Negozio>('http://localhost:3000/reclamo/' + id);
   }
 
-  getReclamiByFilter(filterObject: OggettoFiltro): Observable<Reclamo[]> {
-    return new Observable<Reclamo[]>(observer => {
-        this.getReclami().subscribe((reclami: Reclamo[]) => {
-            const reclamiFiltrati: Reclamo[] = [];
-            reclami.forEach(reclamo => {
-                // Aggiungi le tue condizioni di filtro qui
-                if (
-                    reclamo.negozio?.id === filterObject.codice &&
-                    reclamo.negozio?.descrizione?.includes(filterObject.descNegozio!) &&
-                    reclamo.stato === filterObject.stato &&
-                    reclamo.gestione === filterObject.gestione &&
-                    reclamo.dataApertura === filterObject.data &&
-                    reclamo.regione === filterObject.area &&
-                    reclamo.causale?.includes(filterObject.causale!) &&
-                    reclamo.id === filterObject.idReclamo &&
-                    reclamo.customer?.nome === filterObject.nome &&
-                    reclamo.customer?.cognome === filterObject.cognome
-                ) {
-                    reclamiFiltrati.push(reclamo);
-                }
-            });
-            observer.complete();
-            return reclamiFiltrati;
-            
-        });
-    });
-}
+  getReclamiByFilter(filterObject: OggettoFiltro,reclamiList:Reclamo[]){
+
+    // let reclamiFiltrati : Reclamo={}
+    // reclamiList.forEach(reclamo => {
+    //   if (
+    //     reclamo.negozio?.id == filterObject.codice &&
+    //     reclamo.negozio?.descrizione?.includes(filterObject.descNegozio!) &&
+    //     reclamo.stato == filterObject.stato &&
+    //     reclamo.gestione == filterObject.gestione &&
+    //     reclamo.dataApertura == filterObject.data &&
+    //     reclamo.regione == filterObject.area &&
+    //     reclamo.causale?.includes(filterObject.causale!) &&
+    //     reclamo.id == filterObject.idReclamo &&
+    //     reclamo.customer?.nome == filterObject.nome &&
+    //     reclamo.customer?.cognome == filterObject.cognome
+    // ) {
+    //     reclamiFiltrati=(reclamo);
+    //     return reclamiFiltrati;
+    // }
+      
+    // });
+
+    
+    }
+
   
   updateReclamo(reclamo:Reclamo): Observable<any>{
     return this.httpClient.patch(

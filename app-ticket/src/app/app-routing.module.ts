@@ -14,9 +14,13 @@ const routes: Routes = [
         component: ReclamiListComponent
       },
       {
-        path: ':id',
+        path: 'edit/:id',
         component: ReclamiEditComponent
-      }
+      },
+      {
+        path: 'new',
+        component: ReclamiEditComponent
+    },
     ]
   },
   {

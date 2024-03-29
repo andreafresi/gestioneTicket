@@ -39,8 +39,14 @@ export class ReclamiEditComponent implements OnInit {
     provinciaTik: [''],
   });
 
+  isEditMode: boolean = false
+  id: string = "";
+
   ngOnInit(): void {
-    const id = this.activeRoute.snapshot.paramMap.get('id') ?? '';
+
+    if (this.activeRoute.toString().includes('edit')) {
+      this.isEditMode = true
+    let id = this.activeRoute.snapshot.paramMap.get('id') ?? '';
     this.reclamiService.getReclamoById(id).subscribe((reclamoTrovato) => {
       this.reclamo = reclamoTrovato;
     });
@@ -58,7 +64,28 @@ export class ReclamiEditComponent implements OnInit {
       regione: this.reclamo.regione,
       provinciaTik: this.reclamo.provinciaTik,
     });
+  }else if (this.activeRoute.toString().includes('new')) {
+    this.isEditMode = false
   }
+}
+save() {
+  if (this.isEditMode) {
+    this.reclamiService.updateReclamo(this.reclamo)
+  } else {
+    // chiamo logica di aggiunta
+    this.reclamiService.addReclamo(this.detailForm.getRawValue()).subscribe(() => {
+      this.router.navigate(['reclami'])
+    })
+  }
+//   updateReclamo(): void {
+//     const updatedItem = { ...this.teamList, ...this.teamForm.value };
+//     this.listService.updateTeam(updatedItem).subscribe(() => {
+//       this.router.navigate(['team'])
+//     });
+//   }
+// }
+}
+  
 
   deleteReclamo(): void {
     this.reclamiService.deleteReclamo(this.reclamo).subscribe(() =>
