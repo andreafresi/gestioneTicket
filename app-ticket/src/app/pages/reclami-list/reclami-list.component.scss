@@ -3,13 +3,25 @@
     justify-content: space-between;
     align-items: center;
 }
-
+/* PELLETE
+sfondo -> bianco
+Quello che sembra grigino nell'edit -> 
+	rgba(248,249,249,255) 
+Il blu bottoni -> 
+	rgba(0,112,203,255)
+Quello che sembra grigino nel list -> 
+	rgba(242,247,251,255)
+font ->	
+	rgba(82,104,123,255)
+bordi input ->
+	rgba(218,231,241,255)
+*/
 input[type=text], input[type=date], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid rgba(157, 157, 220, 0.83);
+    border: 1px solid rgba(218,231,241,255);
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -20,6 +32,9 @@ select{
     background-size: 16px 12px;
     -moz-appearance: none;
     appearance: none;
+}
+label{
+    color: rgba(82,104,123,255);
 }
 .formaDelForm {
     // display: flex;
@@ -35,20 +50,23 @@ select{
     grid-template-columns: 22% 38% auto;
     grid-gap: 5px 25px;
 }
+button{
+    border-style: solid;
+}
 .btn-cerca{
-    background: rgb(0, 135, 225);
-    border-color: rgb(0, 135, 225);
+    background: rgba(0,112,203,255);
+    border-color: rgba(0,112,203,255);
     border-radius: 4px;
     display: flex;
     align-items: center;
     color: white;
-    padding: 0.5% 2.5%;
+    padding: 0.5% 4%;
     cursor:pointer;
 }
 .btn-cerca:hover{
     background: white;
     border-color: white;
-    color: rgb(0, 135, 225);
+    color: rgba(0,112,203,255);
 }
 .btn-azzera{
     padding: 0.5% 1.5%;
@@ -56,15 +74,15 @@ select{
 }
 .btn-inserisci{
     background: white;
-    border-color: rgb(0, 135, 225);
+    border-color: rgba(0,112,203,255);
     border-radius: 4px;
     display: flex;
     align-items: center;
-    color: rgb(0, 135, 225);
+    color: rgba(0,112,203,255);
     cursor:pointer;
 }
 .btn-inserisci:hover{
-    background: rgb(0, 135, 225);
+    background: rgba(0,112,203,255);
     border-color: white;
     color: white;
 }
@@ -73,22 +91,37 @@ select{
     align-items: center;
     border: none;
     background: none;
-    color: rgb(0, 135, 225);
+    color: rgba(0,112,203,255);
     margin: 1% 0;
     cursor: pointer;
 }
 .btn-nascondi:hover{
     border-radius: 4px;
-    background: rgb(244, 244, 255);
-    color: rgb(0, 135, 225);
+    background: rgba(248,249,249,255);
+    color: rgba(0,112,203,255);
 }
 .btn-ins-cer{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-esporta{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    color: rgba(0,112,203,255);
+    margin: 1% 0;
+    cursor: pointer;
     display: flex;
     justify-content: flex-end;
 }
 
 .div-check{
     display: none;
+}
+.img-esporta{
+    width: 3.5%;
+    margin-left: 14px;
 }
 /*
 .btn-check:focus + .div-check {

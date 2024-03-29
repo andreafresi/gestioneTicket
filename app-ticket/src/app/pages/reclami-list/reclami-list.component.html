@@ -1,11 +1,11 @@
 <p>reclami-list works!</p>
 
-<div>
+<div style="margin: 0 0.5%;">
     <div class="testata">
         <h2>RECLAMI</h2>
-        <button (click)="goToReclamiNew()" class="btn-inserisci" style="height: 45px;">
+        <button (click)="goToReclamiNew()" class="btn-inserisci" style="height: 45px;"><b style="display: flex; align-items: center;">
             <span class="material-symbols-outlined">add</span> 
-            INSERISCI UN RECLAMO
+            INSERISCI UN RECLAMO</b>
         </button>
     </div>
     <hr>
@@ -61,11 +61,11 @@
             </div>
             <div>
                 <button class="btn-nascondi" id="btn-check" onclick="document.getElementsByClassName('div-check')[0].style.display ='block';">
-                    <span class="material-symbols-outlined">filter_list</span> 
+                    <span class="material-symbols-outlined" style="margin-right: 8px;">filter_list</span> 
                     NASCONDI FILTRI AVANZATI
                 </button>
             </div>
-            <div class="formaDelForm "> <!-- div-check -->
+            <div class="formaDelForm div-check"> <!--  -->
                 <div>
                     <label for="idReclamo">ID Reclamo </label><br>
                     <input formControlName="idReclamo" type="text" id="idReclamo">
@@ -91,13 +91,22 @@
 
         </form>
         <div class="btn-ins-cer">
-            <button class="btn-inserisci btn-azzera">AZZERA</button>
-            <button class="btn-cerca" (click)="searchFilter()">Cerca</button>
+            <button class="btn-inserisci btn-azzera"><b>AZZERA</b></button>
+            <button class="btn-cerca" (click)="searchFilter()"><b>CERCA</b></button>
         </div>
+        <br>
+        <div style="display: flex; justify-content: flex-end;">
+            <button class="btn-esporta" id="">
+                ESPORTA
+                <img src="https://cdn-icons-png.flaticon.com/512/888/888850.png" class="img-esporta" alt=""> 
+            </button>
+        </div>
+
     </div>
+
 </div>
 
-<br><br><br><br>
+<br><br>
 
 
 <app-reclami-item [listReclami]="listReclamo"></app-reclami-item>
