@@ -19,7 +19,7 @@ export class ReclamiEditComponent implements OnInit {
     private router: Router,
     private reclamiService: ReclamiService,
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
   detailForm: FormGroup = this.formBuilder.group({
     email: [''],
@@ -81,7 +81,7 @@ export class ReclamiEditComponent implements OnInit {
     } else {
       this.reclamoAdd.customer!.nome = this.detailForm.get('nome')?.value;
       this.reclamoAdd.customer!.cognome = this.detailForm.get('cognome')?.value;
-      this.reclamoAdd.customer!.fullname =  (this.detailForm.get('nome')?.value +" "+this.detailForm.get('cognome')?.value);
+      this.reclamoAdd.customer!.fullname = (this.detailForm.get('nome')?.value + " " + this.detailForm.get('cognome')?.value);
       this.reclamoAdd.customer!.email = this.detailForm.get('email')?.value;
       this.reclamoAdd.customer!.cellulare = this.detailForm.get('cellulare')?.value;
       this.reclamoAdd.customer!.telefono = this.detailForm.get('telefono')?.value;
@@ -93,40 +93,20 @@ export class ReclamiEditComponent implements OnInit {
       this.reclamoAdd.regione = this.detailForm.get('regione')?.value;
       this.reclamoAdd.provinciaTik = this.detailForm.get('provinciaTik')?.value;
       this.reclamoAdd.dataApertura = this.detailForm.get('data')?.value;
-      this.reclamiService.getNegozioById(this.detailForm.get('codiceNegozio')?.value).subscribe((item)=>{
+      this.reclamoAdd.stato = "Non assegnato";
+      this.reclamoAdd.gestione = "Aperto";
+
+      this.reclamiService.getNegozioById(this.detailForm.get('codiceNegozio')?.value).subscribe((item) => {
+        console.log('item', item)
         this.reclamoAdd.negozio = item
+
+        this.reclamiService
+          .addReclamo(this.reclamoAdd)
+          .subscribe(() => {
+            this.router.navigate(['reclami']);
+          });
       })
-      
-
-      /*this.reclamoAdd.customer!.nome= this.detailForm.getRawValue().controls['nome'];
-      this.reclamoAdd.customer!.cognome=this.detailForm.getRawValue().controls['cognome'];
-      this.reclamoAdd.customer!.fullname= (this.reclamoAdd.customer?.nome +" "+this.reclamoAdd.customer?.cognome);
-      this.reclamoAdd.customer!.email=this.detailForm.getRawValue().controls['email'];
-      this.reclamoAdd.customer!.cellulare=this.detailForm.getRawValue().controls['cellulare'];
-      this.reclamoAdd.customer!.telefono = this.detailForm.getRawValue().controls['telefono'];
-      this.reclamoAdd.customer!.indirizzo = this.detailForm.getRawValue().controls['indirizzo'];
-      this.reclamoAdd.customer!.provincia = this.detailForm.getRawValue().controls['provincia'];
-      this.reclamoAdd.causale = this.detailForm.getRawValue().controls['causale'];
-      this.reclamoAdd.oggettoReclamo = this.detailForm.getRawValue().controls['oggettoReclamo'];
-      this.reclamoAdd.shopOnline = this.detailForm.getRawValue().controls['shopOnline'];
-      this.reclamoAdd.regione = this.detailForm.getRawValue().controls['regione'];
-      this.reclamoAdd.provinciaTik = this.detailForm.getRawValue().controls['provinciaTik'];*/
-      
-      this.reclamiService
-        .addReclamo(this.reclamoAdd)
-        .subscribe(() => {
-          this.router.navigate(['reclami']);
-        });
-
-      
     }
-    //   updateReclamo(): void {
-    //     const updatedItem = { ...this.teamList, ...this.teamForm.value };
-    //     this.listService.updateTeam(updatedItem).subscribe(() => {
-    //       this.router.navigate(['team'])
-    //     });
-    //   }
-    // }
   }
 
   deleteReclamo(): void {

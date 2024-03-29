@@ -39,7 +39,7 @@ export class ReclamiService {
   }
 
   getNegozioById(id: string) : Observable<any>{
-    return this.httpClient.get<Negozio>('http://localhost:3000/reclamo/' + id);
+    return this.httpClient.get<Negozio>('http://localhost:3000/negozio/' + id);
   }
 
   getReclamiByFilter(filterObject: OggettoFiltro,reclamiList:Reclamo[]){
