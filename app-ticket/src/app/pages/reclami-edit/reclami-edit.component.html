@@ -5,114 +5,124 @@
   <hr style="margin: 2.3% 0;">
 
   <div>
-    <form [formGroup]="detailForm" class="formaDelForm">
-      <div class="left-column">
-        <!-- Elementi nel riquadro sinistro -->
-          <p>DATI CLIENTE</p>
-          <hr>
-          <div class="lx-sotto">
-            <div>
-              <label for="nome" class="per-pallino">Nome <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label> 
-              <input type="text" id="nome" formControlName="nome" />
-            </div>
-            <div>
-              <label for="cognome" class="per-pallino">Cognome <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
-              <input type="text" id="cognome" formControlName="cognome" />
-            </div>
-            <div>
-              <label for="email" class="per-pallino">Email <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
-              <input type="text" id="email" formControlName="email" />
-            </div>
-            <div class="per-tel">
+    <form [formGroup]="detailForm" >
+      <div class="formaDelForm">
+        <div class="left-column">
+          <!-- Elementi nel riquadro sinistro -->
+            <p><b>DATI CLIENTE</b></p>
+            <hr>
+            <div class="lx-sotto">
               <div>
-                <label for="telefono">Telefono</label>
-                <input type="text" id="telefono" formControlName="telefono" />
+                <label for="nome" class="per-pallino">Nome <span class="richiesto"> •</span></label> 
+                <input type="text" id="nome" formControlName="nome" />
               </div>
               <div>
-                <label for="cellulare" class="per-pallino">Cellulare <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 4%;"></label>
-                <input type="text" id="cellulare" formControlName="cellulare" />
+                <label for="cognome" class="per-pallino">Cognome <span class="richiesto"> •</span></label>
+                <input type="text" id="cognome" formControlName="cognome" />
+              </div>
+              <div>
+                <label for="email" class="per-pallino">Email <span class="richiesto"> •</span></label>
+                <input type="text" id="email" formControlName="email" />
+              </div>
+              <div class="per-tel">
+                <div>
+                  <label for="telefono">Telefono</label>
+                  <input type="text" id="telefono" formControlName="telefono" />
+                </div>
+                <div>
+                  <label for="cellulare" class="per-pallino">Cellulare <span class="richiesto"> •</span></label>
+                  <input type="text" id="cellulare" formControlName="cellulare" />
+                </div>
+              </div>
+              <div>
+                <label for="indirizzo">Indirizzo </label>
+                <input type="text" id="indirizzo" formControlName="indirizzo" />
+              </div>
+              <div style="width: 20%;">
+                <label for="provincia" class="per-pallino">Provincia <span class="richiesto"> •</span></label>
+                <select name="provincia" id="provincia" formControlName="provincia">
+                    <option *ngFor="let provincia of provinceItaliane" value="provincia">{{provincia}}</option>
+                </select>
               </div>
             </div>
+
+        </div>
+
+        <div class="destra-column">
+          <div style="width: 25%;">
+            <label for="data" class="per-pallino">Data reclamo <span class="richiesto"> •</span></label>
+            <input type="date" id="data" value="null" formControlName="data"/>
+          </div>
+          <div class="per-causale">
             <div>
-              <label for="indirizzo">Indirizzo </label>
-              <input type="text" id="indirizzo" formControlName="indirizzo" />
+              <label for="codiceNegozio" class="per-pallino">Codice Negozio <span class="richiesto"> •</span></label>
+              <select name="codiceNegozio" id="codiceNegozio" formControlName="codiceNegozio">
+                  <option value="1001">1001</option>
+                  <option value="1002">1002</option>
+                  <option value="1003">1003</option>
+                  <option value="1004">1004</option>
+                  <option value="1005">1005</option>
+              </select>
             </div>
             <div>
-              <label for="provincia" class="per-pallino">Provincia <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
-              <select name="provincia" id="provincia" formControlName="provincia">
-                  <option value="uno">uno</option>
-                  <option value="due">due</option>
-                  <option value="tre">tre</option>
+              <label for="causale" class="per-pallino">Causale <span class="richiesto"> •</span></label>
+              <select name="causale" id="causale" formControlName="causale">
+                <option value="Prodotto difettoso">Prodotto difettoso</option>
+                <option value="Prodotto non conforme">Prodotto non conforme</option>
+                <option value="Ritardo nella consegna">Ritardo nella consegna</option>
+                <option value="Prodotto danneggiato durante la consegna">Prodotto danneggiato durante la consegna</option>
+                <option value="Prodotto errato spedito">Prodotto errato spedito</option>
               </select>
             </div>
           </div>
+    
+          <div>
+            <!-- Input per Oggetto Reclamo (utilizzando Quill) -->
+            <label for="ogg" class="per-pallino">Oggetto Reclamo <span class="richiesto"> •</span></label>
+            <div>
+              <quill-editor [style]="{'height':'200px'}" formControlName="oggettoReclamo">Oggetto</quill-editor>
+            </div>
 
-      </div>
+            <div>
+              <!-- Input per Shop Online (utilizzando uno switch orizzontale) -->
+              <div class="container-switch">
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+                <span>Shop Online</span>
+              </div>
+            </div>
 
-      <div class="destra-column">
-        <div>
-          <label for="data" class="per-pallino">Data reclamo <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1%;"></label>
-          <input type="date" id="data" value="null" formControlName="data"/>
-        </div>
-        <div class="per-causale">
-          <div>
-            <label for="codiceNegozio" class="per-pallino">Codice Negozio <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
-            <select name="codiceNegozio" id="codiceNegozio" formControlName="codiceNegozio">
-                <option value="1001">1001</option>
-                <option value="1002">1002</option>
-                <option value="1003">1003</option>
-                <option value="1004">1004</option>
-                <option value="1005">1005</option>
-            </select>
-          </div>
-          <div>
-            <label for="causale" class="per-pallino">Causale <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 2%;"></label>
-            <input type="text" id="causale" formControlName="causale" />
-          </div>
-        </div>
-  
-        <div>
-          <!-- Input per Oggetto Reclamo (utilizzando Quill) -->
-          <label for="ogg" class="per-pallino">Oggetto Reclamo <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1%;"></label>
-          <div>
-            <quill-editor [style]="{'height':'200px'}" formControlName="oggettoReclamo">Oggetto</quill-editor>
           </div>
 
-          <div>
-            <!-- Input per Shop Online (utilizzando uno switch orizzontale) -->
-            <div class="container-switch">
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-              <span>Shop Online</span>
+          <div class="per-regione">
+            <div>
+              <label for="regione" class="per-pallino">Regione <span class="richiesto"> •</span></label>
+              <input type="text" id="regione" formControlName="regione" />
+            </div>
+            <div>
+              <label for="provincia" class="per-pallino">Provincia <span class="richiesto"> •</span></label>
+              <input type="text" id="provincia" formControlName="provinciaTik" />
+              
             </div>
           </div>
-
-        </div>
-
-        <div class="per-regione">
           <div>
-            <label for="regione" class="per-pallino">Regione <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1.5%;"></label>
-            <input type="text" id="regione" formControlName="regione" />
+            <label for="polo" class="per-pallino">Polo <span class="richiesto"> •</span></label>
+            <input type="text" id="polo" formControlName="polo" />
           </div>
-          <div>
-            <label for="provincia" class="per-pallino">Provincia <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 3%;"></label>
-            <input type="text" id="provincia" formControlName="provinciaTik" />
-          </div>
-        </div>
-        <div>
-          <label for="polo" class="per-pallino">Polo <img src="https://images.emojiterra.com/google/android-nougat/512px/1f535.png" style="width: 1%;"></label>
-          <input type="text" id="polo" formControlName="polo" />
         </div>
       </div>
-      <hr style="margin: 2.3% 0;">
-  <div class="btn-ins-cer">
-    <button class="btn-null" onClick="history.go(-1);return true;"><b>ANNULLA</b></button>
-    <button class="btn-inser" (click)="save()"><b>SALVA IL RECLAMO</b></button>
-  </div>
+
+      <div>
+        <hr style="margin: 2.3% 0; border: 1px solid rgb(0 112 203 / 51%)">
+      </div>
+    
+      <div class="btn-ins-cer">
+        <button class="btn-null" onClick="history.go(-1);return true;"><b>ANNULLA</b></button>
+        <button class="btn-inser" (click)="save()"><b>SALVA IL RECLAMO</b></button>
+      </div>
     </form>
   </div>
-
   
 </div>

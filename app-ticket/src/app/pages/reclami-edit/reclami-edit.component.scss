@@ -19,7 +19,7 @@ bordi input ->
 }
 
 .left-column{
-  background-color: rgb(238 244 249);
+  background-color: rgba(248,249,249,255);
   padding: 0% 4%;
   border-radius: 4px;
   box-shadow: 3px 3px 7px 1px rgba(128, 128, 128, 0.618)
@@ -41,13 +41,16 @@ bordi input ->
   grid-gap: 0px 25px;
 }
 
+label{
+  color: rgba(82,104,123,255);
+}
 
 input[type=text], input[type=date], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid rgba(157, 157, 220, 0.83);
+  border: 1px solid rgba(218,231,241,255);
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -60,15 +63,25 @@ select{
   appearance: none;
 }
 
+.per-pallino{
+  display: flex; align-items: flex-start;
+}
+.richiesto{
+  font-family: none !important;
+  color: rgba(0,112,203,255);
+  font-size: 1.3rem;
+}
+
+  /* ***************************
+        BOTTONI
+    *************************** */
+button{
+  border-style: solid;
+}
 .btn-ins-cer{
   display: flex;
   justify-content: flex-end;
 }
-
-.per-pallino{
-  display: flex; align-items: flex-start;
-}
-
 .btn-inser{
   background: rgba(0,112,203,255);
   border-color: rgba(0,112,203,255);
