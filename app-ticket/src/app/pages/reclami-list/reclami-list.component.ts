@@ -32,7 +32,6 @@ export class ReclamiListComponent {
     idReclamo: [''],
     nome: [''],
     cognome: [''],
-    banner: [''],
   });
 
   goToReclamiNew() {
@@ -40,7 +39,7 @@ export class ReclamiListComponent {
   }
 
   ngOnInit(): void {
-    this.reclamiService.getReclami();
+    this.getReclami();
   }
   getReclami() {
     this.reclamiService.getReclami().subscribe((res) => {
@@ -49,32 +48,34 @@ export class ReclamiListComponent {
   }
 
   searchFilter(): any {
-    this.oggettoFiltro.codice = this.ricercaForm.controls['codice'].value;
-    this.oggettoFiltro.descNegozio =
-      this.ricercaForm.controls['descrizioneNegozio'].value;
-    this.oggettoFiltro.stato = this.ricercaForm.controls['stato'].value;
-    this.oggettoFiltro.gestione = this.ricercaForm.controls['gestione'].value;
-    this.oggettoFiltro.data = this.ricercaForm.controls['data'].value;
-    this.oggettoFiltro.area = this.ricercaForm.controls['area'].value;
-    this.oggettoFiltro.causale = this.ricercaForm.controls['causale'].value;
-    this.oggettoFiltro.idReclamo = this.ricercaForm.controls['idReclamo'].value;
-    this.oggettoFiltro.nome = this.ricercaForm.controls['nome'].value;
-    this.oggettoFiltro.cognome = this.ricercaForm.controls['cognome'].value;
+    const filterData = this.ricercaForm.value;
+    let reclamiFiltrati = [...this.listReclamo];
 
-    this.getReclami;
-
-    let reclami = this.reclamiService.getReclamiByFilter(
-      this.oggettoFiltro,
-      this.listReclamo
+    reclamiFiltrati = reclamiFiltrati.filter(
+      (reclamo) =>
+        (!filterData.idReclamo || reclamo.id === filterData.idReclamo) &&
+        (!filterData.codice || reclamo.negozio?.id === filterData.codice) &&
+        (!filterData.descrizioneNegozio || reclamo.negozio?.descrizione === filterData.descrizioneNegozio) &&
+        (!filterData.stato || reclamo.stato === filterData.stato) &&
+        (!filterData.gestione || reclamo.gestione === filterData.gestione) &&
+        (!filterData.data || reclamo.dataApertura === filterData.data) &&
+        (!filterData.area || reclamo.provinciaTik === filterData.area) &&
+        (!filterData.causale || reclamo.causale === filterData.causale) &&
+        (!filterData.nome || reclamo.customer?.nome === filterData.nome) &&
+        (!filterData.cognome || reclamo.customer?.cognome === filterData.cognome)
     );
+
+    this.listReclamo = reclamiFiltrati;
+  }
+  cancellaFiltri() {
+    this.getReclami();
+    this.ricercaForm.reset();
   }
 
-  Nascondi:boolean = true
-  visible:boolean = false
-  onclick()
-  {
+  Nascondi: boolean = true;
+  visible: boolean = false;
+  onclick() {
     this.Nascondi = !this.Nascondi;
-    this.visible = !this.visible
+    this.visible = !this.visible;
   }
-
 }
