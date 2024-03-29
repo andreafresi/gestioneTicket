@@ -68,4 +68,13 @@ export class ReclamiListComponent {
       this.listReclamo
     );
   }
+
+  Nascondi:boolean = true
+  visible:boolean = false
+  onclick()
+  {
+    this.Nascondi = !this.Nascondi;
+    this.visible = !this.visible
+  }
+
 }

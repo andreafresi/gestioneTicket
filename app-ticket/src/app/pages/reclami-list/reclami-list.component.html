@@ -1,5 +1,3 @@
-<p>reclami-list works!</p>
-
 <div style="margin: 0 0.5%;">
     <div class="testata">
         <h2>RECLAMI</h2>
@@ -60,34 +58,37 @@
                 </div>
             </div>
             <div>
-                <button class="btn-nascondi" id="btn-check" onclick="document.getElementsByClassName('div-check')[0].style.display ='block';">
+                <button class="btn-nascondi" id="btn-check" (click)="onclick()">
                     <span class="material-symbols-outlined" style="margin-right: 8px;">filter_list</span> 
-                    NASCONDI FILTRI AVANZATI
+                    {{Nascondi?"MOSTRA FILTRI AVANZATI":"NASCONDI FILTRI AVANZATI"}}
                 </button>
             </div>
-            <div class="formaDelForm div-check"> <!--  -->
-                <div>
-                    <label for="idReclamo">ID Reclamo </label><br>
-                    <input formControlName="idReclamo" type="text" id="idReclamo">
-                </div>
-                <div>
-                    <label for="nome">Nome cliente </label><br>
-                    <input formControlName="nome" type="text" id="nome">
-                </div>
+            <ng-container *ngIf="visible">
+                <div class="formaDelForm " id="ciao">
+                    <div>
+                        <label for="idReclamo">ID Reclamo </label><br>
+                        <input formControlName="idReclamo" type="text" id="idReclamo">
+                    </div>
+                    <div>
+                        <label for="nome">Nome cliente </label><br>
+                        <input formControlName="nome" type="text" id="nome">
+                    </div>
 
-                <div>
-                    <label for="cognome">Cognome cliente </label><br>
-                    <input formControlName="cognome" type="text" id="cognome">
+                    <div>
+                        <label for="cognome">Cognome cliente </label><br>
+                        <input formControlName="cognome" type="text" id="cognome">
+                    </div>
+                    <!-- <div>
+                        <label for="banner">Banner </label><br>
+                        <select name="banner" id="banner">
+                            <option value="uno">uno</option>
+                            <option value="due">due</option>
+                            <option value="tre">tre</option>
+                        </select>
+                    </div> -->
                 </div>
-                <!-- <div>
-                    <label for="banner">Banner </label><br>
-                    <select name="banner" id="banner">
-                        <option value="uno">uno</option>
-                        <option value="due">due</option>
-                        <option value="tre">tre</option>
-                    </select>
-                </div> -->
-            </div>
+            </ng-container>
+
 
         </form>
         <div class="btn-ins-cer">
@@ -105,8 +106,6 @@
     </div>
 
 </div>
-
-<br><br>
 
 
 <app-reclami-item [listReclami]="listReclamo"></app-reclami-item>
