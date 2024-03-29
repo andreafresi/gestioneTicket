@@ -161,6 +161,29 @@ export class ReclamiEditComponent implements OnInit {
     "VT", // Viterbo
   ];
 
+  regioniItaliane: string[] = [
+    "Abruzzo",
+    "Basilicata",
+    "Calabria",
+    "Campania",
+    "Emilia-Romagna",
+    "Friuli-Venezia Giulia",
+    "Lazio",
+    "Liguria",
+    "Lombardia",
+    "Marche",
+    "Molise",
+    "Piemonte",
+    "Puglia",
+    "Sardegna",
+    "Sicilia",
+    "Toscana",
+    "Trentino-Alto Adige",
+    "Umbria",
+    "Valle d'Aosta",
+    "Veneto",
+];
+
   ngOnInit(): void {
     if (this.activeRoute.toString().includes('detail')) {
       this.isDetailMode = true;

@@ -99,12 +99,15 @@
           <div class="per-regione">
             <div>
               <label for="regione" class="per-pallino">Regione <span class="richiesto"> •</span></label>
-              <input type="text" id="regione" formControlName="regione" />
+              <select name="regione" id="regione" formControlName="regione">
+                <option *ngFor="let regione of regioniItaliane" value="regione">{{regione}}</option>
+              </select>
             </div>
             <div>
               <label for="provincia" class="per-pallino">Provincia <span class="richiesto"> •</span></label>
-              <input type="text" id="provincia" formControlName="provinciaTik" />
-              
+              <select name="provincia" id="provincia" formControlName="provincia">
+                <option *ngFor="let provincia of provinceItaliane" value="provincia">{{provincia}}</option>
+            </select>
             </div>
           </div>
           <div>
