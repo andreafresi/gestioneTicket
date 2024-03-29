@@ -120,7 +120,10 @@
     
       <div class="btn-ins-cer">
         <button class="btn-null" onClick="history.go(-1);return true;"><b>ANNULLA</b></button>
-        <button class="btn-inser" (click)="save()"><b>SALVA IL RECLAMO</b></button>
+
+        <button *ngIf="mostraelimina" class="btn-cancella" (click)="deleteReclamo()"><b>ELIMINA</b></button>
+        <button *ngIf="mostraelemento" class="btn-inser " (click)="save()"><b>SALVA IL RECLAMO</b></button>
+    
       </div>
     </form>
   </div>

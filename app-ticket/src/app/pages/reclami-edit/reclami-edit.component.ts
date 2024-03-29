@@ -39,6 +39,9 @@ export class ReclamiEditComponent implements OnInit {
     polo: [''],
   });
 
+  
+  mostraelemento: boolean = true;
+  mostraelimina: boolean = true;
   isDetailMode: boolean = false;
   id: string = '';
   reclamoAdd: Reclamo = {
@@ -161,6 +164,7 @@ export class ReclamiEditComponent implements OnInit {
   ngOnInit(): void {
     if (this.activeRoute.toString().includes('detail')) {
       this.isDetailMode = true;
+      this.mostraelemento = false;
       let id = this.activeRoute.snapshot.paramMap.get('id') ?? '';
       this.reclamiService.getReclamoById(id).subscribe((reclamoTrovato) => {
         this.reclamo = reclamoTrovato;
@@ -184,6 +188,7 @@ export class ReclamiEditComponent implements OnInit {
         });
       });
     } else if (this.activeRoute.toString().includes('new')) {
+      this.mostraelimina=false;
       this.isDetailMode = false;
     }
   }
