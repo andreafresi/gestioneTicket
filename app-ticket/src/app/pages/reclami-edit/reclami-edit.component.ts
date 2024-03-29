@@ -50,6 +50,7 @@ export class ReclamiEditComponent implements OnInit {
   };
 
   provinceItaliane: string[] = [
+    "", //vuoto
     "AG", // Agrigento
     "AL", // Alessandria
     "AN", // Ancona
@@ -162,6 +163,7 @@ export class ReclamiEditComponent implements OnInit {
   ];
 
   regioniItaliane: string[] = [
+    "", //vuoto
     "Abruzzo",
     "Basilicata",
     "Calabria",

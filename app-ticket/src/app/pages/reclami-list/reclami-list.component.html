@@ -21,17 +21,15 @@
                 <div>
                     <label for="stato">Stato </label><br>
                     <select formControlName="stato" name="stato" id="stato">
-                        <option value="uno">uno</option>
-                        <option value="due">due</option>
-                        <option value="tre">tre</option>
+                        <option value="Assegnato">Assegnato</option>
+                        <option value="Non assegnato">Non assegnato</option>
                     </select>
                 </div>
                 <div>
                     <label for="gestione">Gestione </label><br>
                     <select  formControlName="gestione" class="form-select" aria-label="Default select example" name="gestione" id="gestione">
-                        <option value="uno">uno</option>
-                        <option value="due">due</option>
-                        <option value="tre">tre</option>
+                        <option value="Chiuso">Chiuso</option>
+                        <option value="Aperto">Aperto</option>
                     </select>
                 </div>
             </div>
@@ -42,20 +40,20 @@
                 </div>
                 <div>
                     <label for="area">Area </label><br>
-                    <select  formControlName="area" name="area" id="area">
-                        <option value="uno">uno</option>
-                        <option value="due">due</option>
-                        <option value="tre">tre</option>
-                    </select>
+                    <select name="area" id="area" formControlName="area">
+                        <option *ngFor="let area of regioniItaliane" value="area">{{area}}</option>
+                      </select>
                 </div>
                 <div>
-                    <label for="causale">Causale </label><br>
-                    <select  formControlName="causale" name="causale" id="causale">
-                        <option value="uno">uno</option>
-                        <option value="due">due</option>
-                        <option value="tre">tre</option>
+                    <label for="causale" class="per-pallino">Causale <span class="richiesto"> •</span></label>
+                    <select name="causale" id="causale" formControlName="causale">
+                      <option value="Prodotto difettoso">Prodotto difettoso</option>
+                      <option value="Prodotto non conforme">Prodotto non conforme</option>
+                      <option value="Ritardo nella consegna">Ritardo nella consegna</option>
+                      <option value="Prodotto danneggiato durante la consegna">Prodotto danneggiato durante la consegna</option>
+                      <option value="Prodotto errato spedito">Prodotto errato spedito</option>
                     </select>
-                </div>
+                  </div>
             </div>
             <div>
                 <button class="btn-nascondi" id="btn-check" (click)="onclick()">
