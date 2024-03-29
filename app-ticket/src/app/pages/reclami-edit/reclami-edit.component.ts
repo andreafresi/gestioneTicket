@@ -49,21 +49,22 @@ export class ReclamiEditComponent implements OnInit {
     let id = this.activeRoute.snapshot.paramMap.get('id') ?? '';
     this.reclamiService.getReclamoById(id).subscribe((reclamoTrovato) => {
       this.reclamo = reclamoTrovato;
+      this.detailForm.patchValue({ // mod strana
+        email: this.reclamo.customer?.email,
+        nome: this.reclamo.customer?.nome,
+        cognome: this.reclamo.customer?.cognome,
+        cellulare: this.reclamo.customer?.cellulare,
+        telefono: this.reclamo.customer?.telefono,
+        indirizzo: this.reclamo.customer?.indirizzo,
+        provincia: this.reclamo.customer?.provincia,
+        causale: this.reclamo.causale,
+        oggettoReclamo: this.reclamo.oggettoReclamo,
+        shopOnline: this.reclamo.shopOnline,
+        regione: this.reclamo.regione,
+        provinciaTik: this.reclamo.provinciaTik,
+      });
     });
-    this.detailForm.patchValue({
-      email: this.reclamo.customer?.email,
-      nome: this.reclamo.customer?.nome,
-      cognome: this.reclamo.customer?.cognome,
-      cellulare: this.reclamo.customer?.cellulare,
-      telefono: this.reclamo.customer?.telefono,
-      indirizzo: this.reclamo.customer?.indirizzo,
-      provincia: this.reclamo.customer?.provincia,
-      causale: this.reclamo.causale,
-      oggettoReclamo: this.reclamo.oggettoReclamo,
-      shopOnline: this.reclamo.shopOnline,
-      regione: this.reclamo.regione,
-      provinciaTik: this.reclamo.provinciaTik,
-    });
+    
   }else if (this.activeRoute.toString().includes('new')) {
     this.isEditMode = false
   }
