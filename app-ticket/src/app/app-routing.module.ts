@@ -14,7 +14,7 @@ const routes: Routes = [
         component: ReclamiListComponent
       },
       {
-        path: 'edit/:id',
+        path: 'detail/:id',
         component: ReclamiEditComponent
       },
       {

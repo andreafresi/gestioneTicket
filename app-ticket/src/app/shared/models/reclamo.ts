@@ -2,7 +2,7 @@ import { Cliente } from './cliente';
 import { Negozio } from './negozio';
 
 export interface Reclamo {
-  id?: number;
+  id?: string;
   dataApertura?: string;
   negozio?: Negozio;
   causale?: string;
