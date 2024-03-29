@@ -13,7 +13,6 @@ import { ReclamiService } from 'src/app/shared/services/reclami.service';
 })
 export class ReclamiEditComponent implements OnInit {
   reclamo: Reclamo = {};
-  reclamoAdd: Reclamo = {};
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -33,13 +32,14 @@ export class ReclamiEditComponent implements OnInit {
     provincia: ['', Validators.required],
     causale: ['', Validators.required],
     oggettoReclamo: ['', Validators.required],
-    shopOnline: [false], // Valore predefinito a false
+    shopOnline: [''], // Valore predefinito a false
     regione: ['', Validators.required],
     provinciaTik: ['', Validators.required],
   });
 
   isDetailMode: boolean = false;
   id: string = '';
+  reclamoAdd: Reclamo = {};
 
   ngOnInit(): void {
     if (this.activeRoute.toString().includes('detail')) {
@@ -58,7 +58,7 @@ export class ReclamiEditComponent implements OnInit {
           data: this.reclamo.dataApertura,
           provincia: this.reclamo.customer?.provincia,
           causale: this.reclamo.causale,
-          oggettoReclamo: this.reclamo.causale,
+          oggettoReclamo: this.reclamo.oggettoReclamo,
           shopOnline: this.reclamo.shopOnline,
           regione: this.reclamo.regione,
           provinciaTik: this.reclamo.provinciaTik,
@@ -72,11 +72,25 @@ export class ReclamiEditComponent implements OnInit {
     if (this.isDetailMode) {
       this.reclamiService.updateReclamo(this.reclamo);
     } else {
+      
 
-      this.detailForm.controls['nome'].value
+      this.reclamoAdd.customer!.nome= this.detailForm.controls['nome'].value
+      this.reclamoAdd.customer!.cognome=this.detailForm.controls['cognome'].value
+      this.reclamoAdd.customer!.fullname= (this.reclamoAdd.customer?.nome +" "+this.reclamoAdd.customer?.cognome)
+      this.reclamoAdd.customer!.email=this.detailForm.controls['email'].value
+      this.reclamoAdd.customer!.cellulare=this.detailForm.controls['cellulare'].value
+      this.reclamoAdd.customer!.telefono = this.detailForm.controls['telefono'].value
+      this.reclamoAdd.customer!.indirizzo = this.detailForm.controls['indirizzo'].value
+      this.reclamoAdd.customer!.provincia = this.detailForm.controls['provincia'].value
+      this.reclamoAdd.causale = this.detailForm.controls['causale'].value
+      this.reclamoAdd.oggettoReclamo = this.detailForm.controls['oggettoReclamo'].value
+      this.reclamoAdd.shopOnline = this.detailForm.controls['shopOnline'].value
+      this.reclamoAdd.regione = this.detailForm.controls['regione'].value
+      this.reclamoAdd.provinciaTik = this.detailForm.controls['provinciaTik'].value
+      
 
       this.reclamiService
-        .addReclamo(this.detailForm.getRawValue())
+        .addReclamo(this.reclamoAdd)
         .subscribe(() => {
           this.router.navigate(['reclami']);
         });
