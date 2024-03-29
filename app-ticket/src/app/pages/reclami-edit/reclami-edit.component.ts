@@ -35,6 +35,8 @@ export class ReclamiEditComponent implements OnInit {
     shopOnline: [''], // Valore predefinito a false
     regione: [''],
     provinciaTik: [''],
+    codiceNegozio: [''],
+    polo: [''],
   });
 
   isDetailMode: boolean = false;
@@ -65,6 +67,8 @@ export class ReclamiEditComponent implements OnInit {
           shopOnline: this.reclamo.shopOnline,
           regione: this.reclamo.regione,
           provinciaTik: this.reclamo.provinciaTik,
+          codiceNegozio: this.reclamo.negozio?.id,
+          polo: this.reclamo.polo
         });
       });
     } else if (this.activeRoute.toString().includes('new')) {

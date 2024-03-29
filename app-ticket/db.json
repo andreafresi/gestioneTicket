@@ -100,6 +100,7 @@
       "soddisfazione": true,
       "stato": "Assegnato",
       "gestione": "Chiuso",
+      "polo": "Sud",
       "customer": {
         "email": "mario.rossi@example.com",
         "nome": "Mario",
@@ -127,6 +128,7 @@
       "soddisfazione": false,
       "stato": "Assegnato",
       "gestione": "Aperto",
+      "polo": "Nord",
       "customer": {
         "email": "anna.verdi@example.com",
         "nome": "Anna",
@@ -154,6 +156,7 @@
       "soddisfazione": true,
       "stato": "Non assegnato",
       "gestione": "Aperto",
+      "polo": "Sud",
       "customer": {
         "email": "luigi.bianchi@example.com",
         "nome": "Luigi",
@@ -181,6 +184,7 @@
       "soddisfazione": false,
       "stato": "Assegnato",
       "gestione": "Chiuso",
+      "polo": "Nord",
       "customer": {
         "email": "paolo.gialli@example.com",
         "nome": "Paolo",
@@ -208,6 +212,7 @@
       "soddisfazione": false,
       "stato": "Non assegnato",
       "gestione": "Aperto",
+      "polo": "Sud",
       "customer": {
         "email": "giulia.neri@example.com",
         "nome": "Giulia",
@@ -240,6 +245,26 @@
       "shopOnline": "",
       "regione": "EmiliaRomagna",
       "provinciaTik": "RN"
+    },
+    {
+      "id": "e732",
+      "customer": {
+        "nome": "Nome",
+        "cognome": "Cognome",
+        "fullname": "Nome Cognome",
+        "email": "nome@mail.it",
+        "cellulare": "3213332211",
+        "telefono": "",
+        "indirizzo": "",
+        "provincia": "uno"
+      },
+      "negozio": {},
+      "causale": "Causale Generica",
+      "oggettoReclamo": "<p>Oggetto Generico</p>",
+      "shopOnline": "",
+      "regione": "Toscana",
+      "provinciaTik": "Fi",
+      "dataApertura": "2024-03-12"
     }
   ],
   "regione": [

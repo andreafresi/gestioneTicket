@@ -14,4 +14,5 @@ export interface Reclamo {
   soddisfazione?: boolean;
   stato?: string;
   gestione?: string;
+  polo?: string;
 }
