@@ -89,7 +89,10 @@ export class ReclamiEditComponent implements OnInit {
       this.reclamoAdd.regione = this.detailForm.get('regione')?.value;
       this.reclamoAdd.provinciaTik = this.detailForm.get('provinciaTik')?.value;
       this.reclamoAdd.dataApertura = this.detailForm.get('data')?.value;
-      this.reclamoAdd.negozio!.id = this.detailForm.get('codiceNegozio')?.value;
+      this.reclamiService.getNegozioById(this.detailForm.get('codiceNegozio')?.value).subscribe((item)=>{
+        this.reclamoAdd.negozio = item
+      })
+      
 
       /*this.reclamoAdd.customer!.nome= this.detailForm.getRawValue().controls['nome'];
       this.reclamoAdd.customer!.cognome=this.detailForm.getRawValue().controls['cognome'];
