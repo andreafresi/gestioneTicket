@@ -86,7 +86,7 @@
   "reclamo": [
     {
       "id": "1",
-      "dataApertura": "2024-03-27T00:00:00+01:00",
+      "dataApertura": "2024-03-27",
       "negozio": {
         "id": "1001",
         "descrizione": "Negozio di abbigliamento",
@@ -218,8 +218,10 @@
         "indirizzo": "Via Torino 5",
         "provincia": "TO"
       }
+    },
+    {
+      "id": "d205"
     }
-    
   ],
   "regione": [
     {
