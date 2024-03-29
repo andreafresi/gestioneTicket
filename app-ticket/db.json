@@ -86,7 +86,7 @@
   "reclamo": [
     {
       "id": "1",
-      "dataApertura": "2024-03-27",
+      "dataApertura": "2024-03-27T00:00:00+01:00",
       "negozio": {
         "id": "1001",
         "descrizione": "Negozio di abbigliamento",

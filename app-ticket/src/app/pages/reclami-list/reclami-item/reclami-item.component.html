@@ -5,13 +5,15 @@
     </ngx-datatable-column>
 
     <ngx-datatable-column prop="dataApertura" name="PRESO IN CARICO IL" [width]="60" [resizeable]="false">
-        <ng-template let-dataApertura="value" ngx-datatable-cell-template>
+        <!--<ng-template let-dataApertura="value" ngx-datatable-cell-template>
             {{ dataApertura | date : 'short' : undefined : locale }}
-        </ng-template>
+        </ng-template>-->
     </ngx-datatable-column>
 
     <ngx-datatable-column prop="dataApertura" name="CHIUSO IL" [width]="100" [resizeable]="false" [sortable]="false">
-
+        <!--<ng-template let-dataApertura="value" ngx-datatable-cell-template>
+            {{ dataApertura | date : 'short' : undefined : locale }}
+        </ng-template>-->
     </ngx-datatable-column>
 
     <ngx-datatable-column prop="negozio.id" name="NEGOZIO" [width]="100" [resizeable]="false" [sortable]="false">
