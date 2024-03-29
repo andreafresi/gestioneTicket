@@ -221,6 +221,25 @@
     },
     {
       "id": "d205"
+    },
+    {
+      "id": "102a",
+      "customer": {
+        "nome": "Lorenzo",
+        "cognome": "Tagliani",
+        "fullname": "Lorenzo Tagliani",
+        "email": "tagliani46@gmail.com",
+        "cellulare": "3313339170",
+        "telefono": "",
+        "indirizzo": "Via Lazio 20",
+        "provincia": "uno"
+      },
+      "negozio": {},
+      "causale": "Boh",
+      "oggettoReclamo": "<p>X</p>",
+      "shopOnline": "",
+      "regione": "EmiliaRomagna",
+      "provinciaTik": "RN"
     }
   ],
   "regione": [

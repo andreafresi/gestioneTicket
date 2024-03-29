@@ -39,7 +39,10 @@ export class ReclamiEditComponent implements OnInit {
 
   isDetailMode: boolean = false;
   id: string = '';
-  reclamoAdd: Reclamo = {};
+  reclamoAdd: Reclamo = {
+    customer: {},
+    negozio: {}
+  };
 
   ngOnInit(): void {
     if (this.activeRoute.toString().includes('detail')) {
@@ -72,8 +75,23 @@ export class ReclamiEditComponent implements OnInit {
     if (this.isDetailMode) {
       this.reclamiService.updateReclamo(this.reclamo);
     } else {
-      
-      this.reclamoAdd.customer!.nome= this.detailForm.getRawValue().controls['nome'];
+      this.reclamoAdd.customer!.nome = this.detailForm.get('nome')?.value;
+      this.reclamoAdd.customer!.cognome = this.detailForm.get('cognome')?.value;
+      this.reclamoAdd.customer!.fullname =  (this.detailForm.get('nome')?.value +" "+this.detailForm.get('cognome')?.value);
+      this.reclamoAdd.customer!.email = this.detailForm.get('email')?.value;
+      this.reclamoAdd.customer!.cellulare = this.detailForm.get('cellulare')?.value;
+      this.reclamoAdd.customer!.telefono = this.detailForm.get('telefono')?.value;
+      this.reclamoAdd.customer!.indirizzo = this.detailForm.get('indirizzo')?.value;
+      this.reclamoAdd.customer!.provincia = this.detailForm.get('provincia')?.value;
+      this.reclamoAdd.causale = this.detailForm.get('causale')?.value;
+      this.reclamoAdd.oggettoReclamo = this.detailForm.get('oggettoReclamo')?.value;
+      this.reclamoAdd.shopOnline = this.detailForm.get('shopOnline')?.value;
+      this.reclamoAdd.regione = this.detailForm.get('regione')?.value;
+      this.reclamoAdd.provinciaTik = this.detailForm.get('provinciaTik')?.value;
+      this.reclamoAdd.dataApertura = this.detailForm.get('data')?.value;
+      this.reclamoAdd.negozio!.id = this.detailForm.get('codiceNegozio')?.value;
+
+      /*this.reclamoAdd.customer!.nome= this.detailForm.getRawValue().controls['nome'];
       this.reclamoAdd.customer!.cognome=this.detailForm.getRawValue().controls['cognome'];
       this.reclamoAdd.customer!.fullname= (this.reclamoAdd.customer?.nome +" "+this.reclamoAdd.customer?.cognome);
       this.reclamoAdd.customer!.email=this.detailForm.getRawValue().controls['email'];
@@ -85,7 +103,7 @@ export class ReclamiEditComponent implements OnInit {
       this.reclamoAdd.oggettoReclamo = this.detailForm.getRawValue().controls['oggettoReclamo'];
       this.reclamoAdd.shopOnline = this.detailForm.getRawValue().controls['shopOnline'];
       this.reclamoAdd.regione = this.detailForm.getRawValue().controls['regione'];
-      this.reclamoAdd.provinciaTik = this.detailForm.getRawValue().controls['provinciaTik'];
+      this.reclamoAdd.provinciaTik = this.detailForm.getRawValue().controls['provinciaTik'];*/
       
       this.reclamiService
         .addReclamo(this.reclamoAdd)
