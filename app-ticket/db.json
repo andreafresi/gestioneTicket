@@ -85,7 +85,7 @@
   ],
   "reclamo": [
     {
-      "id": "1",
+      "id": "14g1",
       "dataApertura": "2024-03-27",
       "negozio": {
         "id": "1001",
@@ -113,7 +113,7 @@
       }
     },
     {
-      "id": "2",
+      "id": "12bv",
       "dataApertura": "2024-03-26",
       "negozio": {
         "id": "1002",
@@ -141,7 +141,7 @@
       }
     },
     {
-      "id": "3",
+      "id": "hg45",
       "dataApertura": "2024-03-25",
       "negozio": {
         "id": "1003",
@@ -169,7 +169,7 @@
       }
     },
     {
-      "id": "4",
+      "id": "ef53",
       "dataApertura": "2024-03-24",
       "negozio": {
         "id": "1004",
@@ -197,7 +197,7 @@
       }
     },
     {
-      "id": "5",
+      "id": "e956",
       "dataApertura": "2024-03-23",
       "negozio": {
         "id": "1005",
@@ -223,6 +223,32 @@
         "indirizzo": "Via Torino 5",
         "provincia": "TO"
       }
+    },
+    {
+      "id": "e243",
+      "customer": {
+        "nome": "Paolo",
+        "cognome": "Neri",
+        "fullname": "Paolo Neri",
+        "email": "paolo@example.com",
+        "cellulare": "12545665",
+        "telefono": "1237485441",
+        "indirizzo": "via baldi345",
+        "provincia": "provincia"
+      },
+      "negozio": {
+        "id": "1002",
+        "descrizione": "Negozio di elettronica",
+        "manager": "Maria Verdi"
+      },
+      "causale": "Prodotto non conforme",
+      "oggettoReclamo": "<p>Ciao</p>",
+      "shopOnline": "",
+      "regione": "regione",
+      "provinciaTik": "",
+      "dataApertura": "2024-03-06",
+      "stato": "Non assegnato",
+      "gestione": "Aperto"
     }
   ],
   "regione": [
