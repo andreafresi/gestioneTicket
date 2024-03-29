@@ -186,6 +186,7 @@ export class ReclamiEditComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.activeRoute.toString().includes('detail')) {
+      this.disableForm();
       this.isDetailMode = true;
       this.mostraelemento = false;
       let id = this.activeRoute.snapshot.paramMap.get('id') ?? '';
@@ -211,6 +212,7 @@ export class ReclamiEditComponent implements OnInit {
         });
       });
     } else if (this.activeRoute.toString().includes('new')) {
+      this.enableForm();
       this.mostraelimina=false;
       this.isDetailMode = false;
     }
@@ -257,5 +259,12 @@ export class ReclamiEditComponent implements OnInit {
     );
 
     this.router.navigate(['/reclami']);
+  }
+
+  disableForm():void {
+    this.detailForm.disable();
+  }
+  enableForm():void{
+  this.detailForm.enable();
   }
 }
