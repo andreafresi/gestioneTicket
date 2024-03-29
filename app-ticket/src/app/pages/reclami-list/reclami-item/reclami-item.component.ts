@@ -12,6 +12,7 @@ import { ReclamiService } from 'src/app/shared/services/reclami.service';
 })
 export class ReclamiItemComponent {
   listClienti: Cliente[] = []
+  locale: string = 'it'
   @Input() listReclami: Reclamo[] = []
 
   constructor(private reclamiService: ReclamiService, private readonly router: Router) {

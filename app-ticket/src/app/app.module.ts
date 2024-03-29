@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +29,9 @@ import { QuillEditorComponent, QuillModule } from 'ngx-quill';
     QuillEditorComponent,
     QuillModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'it-IT'},
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
